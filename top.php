@@ -9,8 +9,8 @@ print '<html id="'.$path_parts['filename'].'Background" lang="en">';
     <head>
         <title>Climate Change</title>
         <meta charset="utf-8">
-        <meta name="author" content="Nicholas Hanoian">
-        <meta name="description" content="A look at the many different aspects of climate change" >
+        <meta name="author" content="Chris McCabe and Nicholas Hanoian">
+        <meta name="description" content="A database of videogames" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../favicon.ico" rel="icon" type="image/x-icon">
         <link href="../css/custom.css" rel="stylesheet" type="text/css">
