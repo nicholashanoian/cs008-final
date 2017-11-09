@@ -1,3 +1,7 @@
 ID,Name,Genre,Rating,Age Rating,Cover Art,Release Date,Developer,Publisher,Platforms,Screenshots,Nick Insights,Chris Insignts,Review Link,Video Link,Tags
-1,Call of Duty: Black Ops II,Shooter,83,,,11/12/2012,Treyarch,Activison,,,,,,,
-2,Call of Duty: Black Ops III,Shooter,63,,,11/6/2015,Treyarch,Activison,,,,,,,
+1,Call of Duty: Black Ops II,shooter,83,,black-ops-2.jpg,11/12/2012,Treyarch,Activison,,,,,,,
+2,Call of Duty: Black Ops III,shooter,63,,black-ops-3.jpg,11/6/2015,Treyarch,Activison,,,,,,,
+3,The Witcher 3: Wild Hunt,roleplay,96,,witcher-3.jpg,5/18/2015,CD PROJEKT RED,CD PROJEKT RED,,,,,,,
+4,The Elder Scrolls V: Skyrim,roleplay,75,,skyrim.png,11/11/2011,Bethesda Game Studios,Bethesda Softworks,,,,,,,
+5,FIFA 18,sports,84,,fifa-18.png,9/29/2017,EA,EA Sports,,,,,,,
+6,Madden NFL 18,sports,82,,madden-18.jpg,8/25/2017,EA,EA Sports,,,,,,,
