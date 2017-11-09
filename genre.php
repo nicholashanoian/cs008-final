@@ -7,7 +7,6 @@ if(isset($_GET["genre"])){
 
 print '<ol>';
 
-$lastGenre = '';
 foreach ($gameData as $gameRecord) {
     if($gameRecord[2] == $genre) {
         print '<li><a href="game.php?gameID=' . $gameRecord[0] . '">';
