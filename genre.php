@@ -5,6 +5,8 @@ if(isset($_GET["genre"])){
         $genre = htmlentities($_GET['genre'], ENT_QUOTES, "UTF-8");    
 }
 
+print '<article class="genre">';
+
 print '<ol>';
 
 foreach ($gameData as $gameRecord) {
@@ -16,6 +18,11 @@ foreach ($gameData as $gameRecord) {
 }
 
 print '</ol>';
+
+print '</article>';
+
+
+include 'footer.php';
 
 
 

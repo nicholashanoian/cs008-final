@@ -12,6 +12,8 @@ foreach ($gameData as $gameRecord) {
     }
 }
 
+print '<article class="game">';
+
 print '<pre>';
 print_r($thisGame);
 print '</pre>';
@@ -26,3 +28,8 @@ print ')">' . $thisGame[3] . '</fig><br>';
 
 
 print '<fig class="coverArt"><img src="images/cover-art/' .  $thisGame[5] . '"></fig>';
+
+print '</article>';
+
+
+include 'footer.php';

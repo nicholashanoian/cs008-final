@@ -6,7 +6,7 @@ html {
 body {
     font-family: Georgia, Times, serif;
     font-size: 16pt;
-    width: 85%;
+    width: 100%;
     line-height: 1.4em;
     padding: 1em;
     margin-top: 5%;
@@ -24,7 +24,7 @@ nav ol {
 
 
 nav ol li {
-    display: inline-block;
+    display: block;
     list-style-type: none;
     width: 6em;
 }
@@ -94,4 +94,26 @@ pre {
     padding: 1em;
     font-size: 200%;
     float:right;
+}
+
+#navbar {
+    overflow: hidden;
+    float: left;
+}
+
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 20%;
+}
+
+article {
+    max-width: 65%;
+    margin: auto;
+}
+
+footer {
+    max-width: 65%;
+    margin: auto;
 }

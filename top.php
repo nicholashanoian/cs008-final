@@ -133,7 +133,7 @@ print '<html id="' . $path_parts['filename'] . 'Background" lang="en">';
 <!-- ##################     Start of Body   ################## -->
 
     <?php
-    print "<body id='" . $path_parts['filename'] . "'>";
+    print "<body id='" . $path_parts['filename'] . "' onscroll='stickyNav()'>";
 
     include('header.php');
     include('nav.php');
