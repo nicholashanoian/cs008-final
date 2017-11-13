@@ -95,9 +95,9 @@ pre {
 }
 
 .rating {
-    padding: 1em;
     font-size: 200%;
-    float:right;
+    line-height: initial;
+    padding: 0.5em;
 }
 
 #navbar {
@@ -124,8 +124,13 @@ footer {
 }
 
 aside {
-    float: right;
-    border: thick black;
+    text-align: left;
+    padding: 0.5em 0;
+}
+
+aside ul {
+    padding: 0 1em;
+    margin-bottom: 0;
 }
 
 aside ul li {
@@ -134,4 +139,11 @@ aside ul li {
 
 .coverArt img {
     max-width: 400px;
+}
+
+.sideInfo {
+    float: right;
+    text-align: center;
+    border: 1px solid black;
+    padding-top: 2em;
 }

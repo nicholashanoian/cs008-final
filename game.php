@@ -22,6 +22,8 @@ $ratingColor = ratingGradient($thisGame[3]);
 
 print '<h2>' . $thisGame[1] . '</h2>';
 
+print '<div class="sideInfo">';
+
 print '<fig class="rating" style="background-color:rgb(';
 print $ratingColor[0] . ',' . $ratingColor[1] . ',' . $ratingColor[2];
 print ')">' . $thisGame[3] . '</fig><br>';
@@ -48,6 +50,8 @@ print '<aside class="gameInfo">
         </li>
     </ul>
 </aside>';
+
+print '</div>';
 
 
 print '<fig class="coverArt"><img src="images/cover-art/' .  $thisGame[5] . '"></fig>';
