@@ -118,5 +118,21 @@ article {
 footer {
     max-width: 65%;
     margin: auto;
+<<<<<<< HEAD
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+=======
+}
+
+aside {
+    float: right;
+    border: thick black;
+}
+
+aside ul li {
+    list-style-type: none;
+}
+
+.coverArt img {
+    max-width: 400px;
+>>>>>>> fb6baa799d3f01ee5bbe5376660c314b64d57521
 }
