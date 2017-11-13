@@ -147,3 +147,9 @@ aside ul li {
     border: 1px solid black;
     padding-top: 2em;
 }
+
+.summary {
+    max-width: 450px;
+    font-size: 0.8em;
+    line-height: 1.3em;
+}
