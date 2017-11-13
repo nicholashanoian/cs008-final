@@ -117,3 +117,16 @@ footer {
     max-width: 65%;
     margin: auto;
 }
+
+aside {
+    float: right;
+    border: thick black;
+}
+
+aside ul li {
+    list-style-type: none;
+}
+
+.coverArt img {
+    max-width: 400px;
+}

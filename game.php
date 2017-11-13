@@ -26,10 +26,38 @@ print '<fig class="rating" style="background-color:rgb(';
 print $ratingColor[0] . ',' . $ratingColor[1] . ',' . $ratingColor[2];
 print ')">' . $thisGame[3] . '</fig><br>';
 
+print '<aside class="gameInfo">
+    <ul>
+        <li>
+            <strong>Release Date</strong>: '.$thisGame[6].' 
+        </li>
+        <li>
+            <strong>Developer</strong>: '.$thisGame[7].'
+        </li>
+        <li>
+            <strong>Publisher</strong>: '.$thisGame[8].'
+        </li>
+        <li>
+            <strong>Platforms</strong>: '.$thisGame[9].'
+        </li>
+        <li>
+            <strong>Tags</strong>: '.$thisGame[10].'
+        </li>
+        <li>
+            <strong>Rating</strong>: '.$thisGame[4].'
+        </li>
+    </ul>
+</aside>';
+
 
 print '<fig class="coverArt"><img src="images/cover-art/' .  $thisGame[5] . '"></fig>';
+
+print '<p class="summary"><strong>Summary</strong>: ' . $thisGame[11] . '</p>';
 
 print '</article>';
 
 
 include 'footer.php';
+
+
+?>
