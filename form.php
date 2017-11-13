@@ -227,8 +227,8 @@ if (isset($_POST['btnSubmit']) AND empty($errorMsg)) { //closing of if marked wi
     print $message;
 } else {
 
-    print '<br><h2>Register Today</h2>';
-    print '<p class="form-heading">Your information will greatly help us with our research.</p>';
+    print '<br><h2>Are We Missing a Game? Submit a Review Proposal</h2>';
+    print '<p class="form-heading">Please fill out the form below.</p>';
 
     //##################################
     //
