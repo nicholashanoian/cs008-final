@@ -14,6 +14,30 @@ print '<html id="' . $path_parts['filename'] . 'Background" lang="en">';
     <link href="../favicon.ico" rel="icon" type="image/x-icon">
     <link href="css/custom.css" rel="stylesheet" type="text/css">
 
+    <script>
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        var navbar;
+        var sticky;
+        window.onload = function() {
+            // Get the navbar
+            navbar = document.getElementById('navbar');
+            // Get the offset position of the navbar
+            sticky = navbar.offsetTop;
+        };
+    
+        function stickyNav() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        };
+        
+        
+
+        
+    </script>
+
 
     <?php
     $debug = false;
@@ -63,15 +87,15 @@ print '<html id="' . $path_parts['filename'] . 'Background" lang="en">';
         include 'lib/validation-functions.php';
         include 'lib/mail-message.php';
     }
-    
+
     if ($path_parts['filename'] == "game") {
         include 'lib/rating-gradient.php';
     }
 
     print PHP_EOL . '<!-- finished including libraries -->' . PHP_EOL;
-    
+
     print PHP_EOL . '<!-- start reading data -->' . PHP_EOL;
-    
+
     $myFolder = 'data/';
 
     $myFileName = 'games';
@@ -122,23 +146,20 @@ print '<html id="' . $path_parts['filename'] . 'Background" lang="en">';
 
         fclose($file);
     } // ends if file was opened 
-    
+
     print PHP_EOL . '<!-- end reading data -->' . PHP_EOL;
-    
-    
-    
     ?>
 
 </head>
 <!-- ##################     Start of Body   ################## -->
 
-    <?php
-    print "<body id='" . $path_parts['filename'] . "' onscroll='stickyNav()'>";
+<?php
+print "<body id='" . $path_parts['filename'] . "' onscroll='stickyNav()'>";
 
-    include('header.php');
-    include('nav.php');
+include('header.php');
+include('nav.php');
 
-    if ($debug) {
-        print '<p>DEBUG MODE IS ON</p>';
-    }
-    ?>
+if ($debug) {
+    print '<p>DEBUG MODE IS ON</p>';
+}
+?>
