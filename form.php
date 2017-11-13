@@ -30,7 +30,7 @@ $thisURL = $domain . $phpSelf;
 
 
 $email = "";
-
+$gameName = "";
 // %^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
 // SECTION: 1d fomr error flags
@@ -40,7 +40,7 @@ $email = "";
 
 
 $emailERROR = false;
-
+$gameNameERROR=false;
 // %^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
 // SECTION: 1e misc variables
@@ -82,7 +82,7 @@ if (isset($_POST['btnSubmit'])) {
     $email = filter_var($_POST['txtEmail'], FILTER_SANITIZE_EMAIL);
     $dataRecord[] = $email;
 
-
+    $gameName = filter_var($_POST['txtGame'], ENT_QUOTES, "UTF-8");
 
 
 
@@ -102,14 +102,21 @@ if (isset($_POST['btnSubmit'])) {
 
 
 
-    if ($email == '') {
+    if($email == '') {
         $errorMsg[] = 'Please enter your email address';
         $emailERROR = true;
     } elseif (!verifyEmail($email)) {
         $errorMsg[] = 'Your email address appears to be incorrect.';
         $emailERROR = true;
     }
-
+    
+    if($gameName== ''){
+        $errorMsg[] = 'Please enter the title of the game.';
+        $gameNameERROR = true;
+    }elseif(!verifyAlphaNum($gameName)){
+    $errorMsg[]= "The title of your game appears to have extra characters.";
+    $gameNameERROR = true;
+    }
 
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@
     //
@@ -300,7 +307,21 @@ if (isset($_POST['btnSubmit']) AND empty($errorMsg)) { //closing of if marked wi
                             type="text"
                             value="<?php print $email; ?>"
                             >
-                    </p>            
+                    </p>    
+                    <p>
+                        <label class="required" for="txtEmail">Game Title</label>
+                        <input 
+    <?php if ($gameNameERROR) print 'class="mistake"'; ?>
+                            id="txtEmail"
+                            maxlength="75"
+                            name="txtGame"
+                            onfocus="this.select()"
+                            placeholder="Enter the Title of the Game"
+                            tabindex="130"
+                            type="text"
+                            value="<?php print $gameName; ?>"
+                            >
+                    </p>  
                 </fieldset> <!-- ends contact -->
 
                 <fieldset class="buttons">
