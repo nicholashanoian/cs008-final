@@ -1,4 +1,4 @@
-`<!-- ####################    Start of  Nav   ############################ -->
+<!-- ####################    Start of  Nav   ############################ -->
 
 
 
@@ -23,6 +23,14 @@
         print '">';
         print '<a href="genre.php?genre=shooter">Shooters</a>';
         print '</li>';
+        
+        print '<li class="';
+        if($path_parts['filename'] == 'index') {
+            print 'activePage';}
+        print '">';
+        print '<a href="index.php">Home</a>';
+        print '</li>';
+        
         
         
         print '<li class="';
@@ -51,7 +59,12 @@
         <?php
         
         
-        
+        print '<li class="';
+        if($path_parts['filename'] == 'index') {
+            print 'activePage';}
+        print '">';
+        print '<a href="index.php">Home</a>';
+        print '</li>';
         
         print '<li class="';
         if($path_parts['filename'] == 'roleplay') {
@@ -67,6 +80,8 @@
         print '">';
         print '<a href="genre.php?genre=shooter">Shooters</a>';
         print '</li>';
+        
+        
         
         
         print '<li class="';

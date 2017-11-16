@@ -20,6 +20,7 @@
     <ol>
         <li>Pages
             <ol>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="genre.php?genre=shooter">Shooters</a></li>
                 <li><a href="genre.php?genre=sports">Sports</a></li>
                 <li><a href="genre.php?genre=roleplay">Role Play</a></li>
