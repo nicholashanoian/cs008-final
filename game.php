@@ -53,10 +53,14 @@ print '<aside class="gameInfo">
 
 print '</div>';
 
-
+//cover art
 print '<fig class="coverArt"><img src="images/cover-art/' .  $thisGame[5] . '"></fig>';
 
+//game summary
 print '<p class="summary"><strong>Summary</strong>: ' . $thisGame[11] . '</p>';
+
+//game trailer
+print '<iframe width="560" height="315" src="https://youtube.com/embed/'.$thisGame[16].'" frameborder="0" allowfullscreen></iframe>';
 
 print '</article>';
 
