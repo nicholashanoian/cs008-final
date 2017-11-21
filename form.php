@@ -110,8 +110,8 @@ if (isset($_POST['btnSubmit'])) {
         $emailERROR = true;
     }
     
-    if($gameName== ''){
-        $errorMsg[] = 'Please enter the title of the game.';
+    if($gameName== ""){
+        $errorMsg[] = "Please enter the title of the game.";
         $gameNameERROR = true;
     }elseif(!verifyAlphaNum($gameName)){
     $errorMsg[]= "The title of your game appears to have extra characters.";
