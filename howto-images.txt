@@ -1,0 +1,29 @@
+we are no longer using data.csv for cover art or the screenshots
+
+
+
+To add cover art:
+
+create folder in images/cover-art with name of the game's ID number as listed in data.csv
+
+ex. images/cover-art/2
+
+add image to said folder
+
+
+
+
+To add images for the screenshot slider:
+
+create folder in images/screenshots with name of the game's ID number as listed in data.csv
+
+ex. images/screenshots/2
+
+add images to said folder (only use images 1280 x 720)
+
+
+
+note: You need to use an ssh client (putty) to delete any images you
+upload and no longer want to use, so be careful. I can show you how
+to if you need help. If you use the same filename it will overwrite 
+and you will be fine.

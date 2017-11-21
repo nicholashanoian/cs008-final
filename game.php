@@ -12,22 +12,48 @@ foreach ($gameData as $gameRecord) {
     }
 }
 
+// ############################ Begin Game Article ########################## //
+
 print '<article class="game">';
 
-print '<pre>';
-print_r($thisGame);
-print '</pre>';
+print PHP_EOL;
+print PHP_EOL;
+
+//to show row of data for this game for debugging
+
+//print '<pre>';
+//print_r($thisGame);
+//print '</pre>';
+//
+//
+//print PHP_EOL;
+//print PHP_EOL;
+
 
 $ratingColor = ratingGradient($thisGame[3]);
 
 print '<h2>' . $thisGame[1] . '</h2>';
 
+print PHP_EOL;
+print PHP_EOL;
+
+// ############################ Side Info Box ############################### //
+
 print '<div class="sideInfo">';
 
+print PHP_EOL;
+print PHP_EOL;
+
+
+// ########################### Rating Box ################################### //
 print '<fig class="rating" style="background-color:rgb(';
 print $ratingColor[0] . ',' . $ratingColor[1] . ',' . $ratingColor[2];
 print ')">' . $thisGame[3] . '</fig><br>';
 
+print PHP_EOL;
+print PHP_EOL;
+
+// ########################### Game Info #################################### //
 print '<aside class="gameInfo">
     <ul>
         <li>
@@ -53,17 +79,118 @@ print '<aside class="gameInfo">
 
 print '</div>';
 
-//cover art
-print '<fig class="coverArt"><img src="images/cover-art/' .  $thisGame[5] . '"></fig>';
+print PHP_EOL;
+print PHP_EOL;
 
-//game summary
+
+// ############################ Cover Art ################################### //
+
+//setup path to folder containing cover art
+$coverArtPath = 'images/cover-art/';
+$coverArtPath .= $thisGame[0];
+$coverArtPath .= '/';
+
+//create new iterator of that folder
+$gameCoverArt = new FilesystemIterator($coverArtPath);
+
+//create array containing file names of that folder
+$coverArtEntries = array();
+foreach ($gameCoverArt as $fileInfo) {
+    $coverArtEntries[] = $fileInfo -> getFilename();
+}
+
+
+//print html for showing that image
+print '<fig class="coverArt"><img src="' . $coverArtPath;
+print $coverArtEntries[0];
+print '"></fig>';
+
+print PHP_EOL;
+print PHP_EOL;
+
+// ############################ Summary ##################################### //
+
 print '<p class="summary"><strong>Summary</strong>: ' . $thisGame[11] . '</p>';
 
-//game trailer
-print '<iframe width="560" height="315" src="https://youtube.com/embed/'.$thisGame[16].'" frameborder="0" allowfullscreen></iframe>';
+print PHP_EOL;
+print PHP_EOL;
+
+
+// ############################ Screenshots ################################# //
+
+
+//setup path to folder containing screenshots
+$screenshotPath = 'images/screenshots/';
+$screenshotPath .= $thisGame[0];
+$screenshotPath .= '/';
+
+//create new iterator of that folder
+$gameScreenshots = new FilesystemIterator($screenshotPath);
+
+//create array containing file names of that folder
+$screenshotEntries = array();
+foreach ($gameScreenshots as $fileInfo) {
+    $screenshotEntries[] = $fileInfo -> getFilename();
+}
+
+
+
+//create div to hold all images in the folder
+print '<div id="screenshotContainer">';
+
+//print images with sources from the array
+foreach ($screenshotEntries as $src) {
+    print '<img class="screenshotSlides" src="' . $screenshotPath;
+    print $src;
+    print '" alt="">';
+    print PHP_EOL;
+}
+
+//create div for buttons of slider
+print '<div class="center display-bottom-middle" style="width:100%">';
+
+//create left and right buttons for slider
+print '<div class="left button" onclick="moveImg(-1)">&#10094;</div>';
+print '<div class="right button" onclick="moveImg(1)">&#10095;</div>';
+
+//for each image in slider add a bottom button
+for ($i; $i < count($screenshotEntries); $i++) {
+    print '<div class="smallButton demo" onclick="setImg('; 
+    if ($i == 0) {
+        print '0'; //php didn't want to print a zero (printed nothing) so had to force it
+    } else {
+        print $i; //normally print game id
+    }
+    print ')"></div>';
+             
+}
+
+print '</div>';
+
+print '</div>';
+
+
+
+print PHP_EOL;
+print PHP_EOL;
+
+// ############################ Game Trailer ################################ //
+
+print '<div class="video-container">';
+
+print '<iframe width="640" height="352" src="https://youtube.com/embed/'.$thisGame[16].'" frameborder="0" allowfullscreen></iframe>';
+
+print '</div>';
+
+print PHP_EOL;
+print PHP_EOL;
 
 print '</article>';
 
+// ######################### End Game Article ############################ //
+
+print PHP_EOL;
+print PHP_EOL;
 
 include 'footer.php';
 
