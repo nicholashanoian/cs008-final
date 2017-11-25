@@ -1,6 +1,6 @@
 <!-- ####################    Start of  header   ############################ -->
 
-<header>
+<header class="title">
     <h1>Video Game Database</h1>
 </header>
 
