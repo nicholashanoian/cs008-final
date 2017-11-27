@@ -10,7 +10,7 @@
         
         
         print '<li class="';
-        if($path_parts['filename'] == 'roleplay') {
+        if($path_parts['filename'] == 'genre' AND $genre == 'roleplay') {
             print 'activePage';}
         print '">';
         print '<a href="genre.php?genre=roleplay">RPGs</a>';
@@ -18,7 +18,7 @@
         
         
         print '<li class="';
-        if($path_parts['filename'] == 'shooters') {
+        if($path_parts['filename'] == 'genre' AND $genre == 'shooter') {
             print 'activePage';}
         print '">';
         print '<a href="genre.php?genre=shooter">Shooters</a>';
@@ -34,7 +34,7 @@
         
         
         print '<li class="';
-        if($path_parts['filename'] == 'sports') {
+        if($path_parts['filename'] == 'genre' AND $genre == 'sports') {
             print 'activePage';}
         print '">';
         print '<a href="genre.php?genre=sports">Sports</a>';
@@ -59,15 +59,10 @@
         <?php
         
         
-        print '<li class="';
-        if($path_parts['filename'] == 'index') {
-            print 'activePage';}
-        print '">';
-        print '<a href="index.php">Home</a>';
-        print '</li>';
+        
         
         print '<li class="';
-        if($path_parts['filename'] == 'roleplay') {
+        if($path_parts['filename'] == 'genre' AND $genre == 'roleplay') {
             print 'activePage';}
         print '">';
         print '<a href="genre.php?genre=roleplay">RPGs</a>';
@@ -75,17 +70,23 @@
         
         
         print '<li class="';
-        if($path_parts['filename'] == 'shooters') {
+        if($path_parts['filename'] == 'genre' AND $genre == 'shooter') {
             print 'activePage';}
         print '">';
         print '<a href="genre.php?genre=shooter">Shooters</a>';
         print '</li>';
         
+        print '<li class="';
+        if($path_parts['filename'] == 'index') {
+            print 'activePage';}
+        print '">';
+        print '<a href="index.php">Home</a>';
+        print '</li>';
         
         
         
         print '<li class="';
-        if($path_parts['filename'] == 'sports') {
+        if($path_parts['filename'] == 'genre' AND $genre == 'sports') {
             print 'activePage';}
         print '">';
         print '<a href="genre.php?genre=sports">Sports</a>';

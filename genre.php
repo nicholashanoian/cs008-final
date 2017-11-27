@@ -1,9 +1,7 @@
 <?php
 include 'top.php';
 
-if(isset($_GET["genre"])){
-        $genre = htmlentities($_GET['genre'], ENT_QUOTES, "UTF-8");    
-}
+
 
 print '<article class="genre">';
 

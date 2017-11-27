@@ -73,6 +73,10 @@ print '<html id="' . $path_parts['filename'] . 'Background" lang="en">';
         print '</pre></p>';
     }
 
+    
+    if(isset($_GET["genre"])){
+        $genre = htmlentities($_GET['genre'], ENT_QUOTES, "UTF-8");    
+    }
 // %^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
 // include all libraries
