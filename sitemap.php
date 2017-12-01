@@ -24,6 +24,7 @@
                 <li><a href="genre.php?genre=shooter">Shooters</a></li>
                 <li><a href="genre.php?genre=sports">Sports</a></li>
                 <li><a href="genre.php?genre=roleplay">Role Play</a></li>
+                <li><a href="form.php">Requests</a></li>
             </ol>
         </li>
 

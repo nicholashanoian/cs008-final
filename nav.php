@@ -19,7 +19,7 @@
         
         print '<li class="';
         if($path_parts['filename'] == 'genre' AND $genre == 'shooter') {
-            print 'activePage';}
+            print 'activePage';}    
         print '">';
         print '<a href="genre.php?genre=shooter">Shooters</a>';
         print '</li>';
@@ -45,7 +45,7 @@
         if($path_parts['filename'] == 'form') {
             print 'activePage';}
         print '">';
-        print '<a href="form.php">Join</a>';
+        print '<a href="form.php">Requests</a>';
         print '</li>';
         
         ?>
@@ -97,7 +97,7 @@
         if($path_parts['filename'] == 'form') {
             print 'activePage';}
         print '">';
-        print '<a href="form.php">Join</a>';
+        print '<a href="form.php">Requests</a>';
         print '</li>';
         
         ?>

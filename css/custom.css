@@ -270,3 +270,148 @@ aside ul li {
     width:100%;
     height:100%;
 }
+
+
+form {
+    max-width: 30em;
+    font-family: sans-serif;
+    margin: auto;
+}
+
+fieldset {
+    border: 2px solid #aa6f39;
+    clear: both;
+    margin-top: 1.5em;
+}
+
+label {
+    color: #246068;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+.form-heading {
+    text-align: center;
+}
+
+.text-field {
+    display: block;
+    float: left;
+    padding-right: 0.5em;
+    width: 7em;
+}
+
+#form input[type=submit] {
+    background: #246068 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px 0px #69969c;
+    color: #fff;
+    margin: 1em;
+    padding: 0.4em 2.5em;
+    font-size: 1.2em;
+}
+
+fieldset.buttons {
+    text-align:center;
+}
+
+#form input[type=text] {
+    padding: 10px;
+    font-size: 0.5em;
+    width: 95%;
+}
+
+#form input#txtEmail:focus {
+    outline-color: rgb(77, 144, 254);
+    outline-offset: -2px;
+    outline-style: auto;
+    outline-width: 5px;
+}
+
+form p {
+    font-size: 1.5em;
+}
+
+.buttons legend {
+    display: none;
+}
+
+legend {
+    color: #246068;
+    font-weight: bold;
+    font-size: 1.4em;
+    line-height: 1.5em;
+}
+
+label:after {
+    content:"\a";
+    white-space: pre;
+}
+
+/* Lab 9 */
+.mistake {
+    background-color: rgba(255, 0, 0, 0.22);
+    border: thin solid rgb(255, 0, 0);
+}
+
+#errors ol li{
+    color: #f00;
+}
+
+#userMessage {
+    max-width: 30em;
+    margin: auto;
+    border: 2px solid #aa6f39;
+    clear: both;
+    margin-top: 1.5em;
+}
+
+/* Lab 10 */
+.message {
+    max-width: 30em;
+    margin: auto;
+    border: 2px solid #aa6f39;
+    clear: both;
+    margin-top: 0.5em;
+}
+
+.formInfo {
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.noTop {
+    margin-top: 0;
+}
+
+.noBottom {
+    margin-bottom: 0;
+}
+
+/* Lab 11 */
+fieldset p {
+    margin: 0.2em 0;
+}
+
+.radio ul, .checkbox ul {
+    list-style-type: none;
+}
+
+
+
+
+.radio li {
+    display: inline-block;
+    padding-right: 2em;
+}
+
+select {
+    font-size: 0.8em;
+    padding: 0.3em 0;
+    margin: 1em 2.5em;
+}
