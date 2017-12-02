@@ -18,10 +18,10 @@
         
         
         print '<li class="';
-        if($path_parts['filename'] == 'genre' AND $genre == 'shooter') {
+        if($path_parts['filename'] == 'genre' AND $genre == 'action') {
             print 'activePage';}    
         print '">';
-        print '<a href="genre.php?genre=shooter">Shooters</a>';
+        print '<a href="genre.php?genre=action">Action</a>';
         print '</li>';
         
         print '<li class="';
@@ -70,10 +70,10 @@
         
         
         print '<li class="';
-        if($path_parts['filename'] == 'genre' AND $genre == 'shooter') {
+        if($path_parts['filename'] == 'genre' AND $genre == 'action') {
             print 'activePage';}
         print '">';
-        print '<a href="genre.php?genre=shooter">Shooters</a>';
+        print '<a href="genre.php?genre=action">Action</a>';
         print '</li>';
         
         print '<li class="';

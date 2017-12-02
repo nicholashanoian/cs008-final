@@ -141,11 +141,13 @@ pre {
 article {
     max-width: 39em;
     margin: auto;
+    padding: 1em;
 }
 
 footer {
     max-width: 39em;
     margin: auto;
+    padding: 1em;
 
 }
 
@@ -221,14 +223,14 @@ aside ul li {
 
 .smallButton {
     background-color: initial;
-    width: 25px;
-    height: 25px;
+    width: 16px;
+    height: 16px;
     display: inline-block;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    margin-left: 6px;
+    margin-right: 6px;
     border: 1px solid gray;
     position: relative;
-    top: 20px;
+    top: 22px;
 }
 
 
@@ -236,7 +238,7 @@ aside ul li {
     cursor: pointer;
 }
 
-.fillWhite {
+.activeSlide {
     background-color: white;
 }
 
@@ -410,4 +412,23 @@ select {
     font-size: 0.8em;
     padding: 0.3em 0;
     margin: 1em 2.5em;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    #navbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .coverArt {
+        display: block;
+        text-align: center;
+    }
+    .sideInfo {
+        float: none;
+        margin: 0.5em auto;
+    }
 }

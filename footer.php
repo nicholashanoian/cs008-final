@@ -22,10 +22,10 @@ function startUp() {
       x[i].style.display = "none"; 
     }
     for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" fillWhite", "");
+     dots[i].className = dots[i].className.replace(" activeSlide", "");
     }
     x[0].style.display = "block";
-    dots[slideIndex].className += " fillWhite";
+    dots[slideIndex].className += " activeSlide";
     setTimeout('moveImg(1)', 3000);
 }
 
@@ -40,12 +40,12 @@ function moveImg(n) {
     }
     slideIndex += n;
     for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" fillWhite", "");
+     dots[i].className = dots[i].className.replace(" activeSlide", "");
     }
     if (slideIndex > x.length-1) {slideIndex = 0} 
     if (slideIndex < 0) {slideIndex = x.length-1}
     x[slideIndex].style.display = "block"; 
-    dots[slideIndex].className += " fillWhite";
+    dots[slideIndex].className += " activeSlide";
     clearInterval(slidesTimer);
     slidesTimer = setInterval('moveImg(1)', 3000);
     
@@ -61,10 +61,10 @@ function setImg(n) {
     }
     slideIndex = n;
     for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" fillWhite", "");
+     dots[i].className = dots[i].className.replace(" activeSlide", "");
     }
     x[slideIndex].style.display = "block"; 
-    dots[slideIndex].className += " fillWhite";
+    dots[slideIndex].className += " activeSlide";
     clearInterval(slidesTimer);
     slidesTimer = setInterval('moveImg(1)', 3000);
 }
