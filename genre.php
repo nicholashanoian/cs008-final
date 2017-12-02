@@ -1,6 +1,23 @@
 <?php
 include 'top.php';
 
+// ############################# Breadcrum Trail #############################//
+
+if($genre=='roleplay') {
+    $genreClean = 'Role-Play';
+} else{
+    $genreClean = ucwords($genre);
+}
+
+
+print('<div class="breadcrumbContainer"><nav class="breadcrumb">
+    <a href="index.php">Home</a> / 
+    <a href="genre.php?genre='.$genre. '">' . $genreClean .'</a>
+
+
+        </nav></div>');
+
+
 
 
 print '<article class="genre">';

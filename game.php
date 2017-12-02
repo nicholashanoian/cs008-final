@@ -12,6 +12,26 @@ foreach ($gameData as $gameRecord) {
     }
 }
 
+// ############################# Breadcrum Trail #############################//
+
+if($thisGame[2]=='roleplay') {
+    $genreClean = 'Role-Play';
+} else{
+    $genreClean = ucwords($thisGame[2]);
+}
+
+
+print('<div class="breadcrumbContainer"><nav class="breadcrumb">
+    <a href="index.php">Home</a> / 
+    <a href="genre.php?genre='.$thisGame[2]. '">' . $genreClean .'</a> / 
+    <a href="game.php?game=' . $thisGame[0]. '">' . $thisGame[1] .'</a>
+
+
+        </nav></div>');
+
+
+
+
 // ############################ Begin Game Article ########################## //
 
 print '<article class="game">';
@@ -39,7 +59,7 @@ print PHP_EOL;
 
 // ############################ Side Info Box ############################### //
 
-print '<div class="sideInfo">';
+print '<div class="gameInfoContainer">';
 
 print PHP_EOL;
 print PHP_EOL;
