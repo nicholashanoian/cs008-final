@@ -24,6 +24,7 @@ nav ol {
 }
 .activePage{
     background-color: #cec6c6;
+    color:#f00;
 }
 #topnav ol{
     margin-top: 0;
@@ -72,7 +73,7 @@ h1 {
     text-transform: uppercase;
     margin-bottom: 0;
     margin-top:0;
-    color: #484545;
+    color: #000;
     padding-top:.2em;
     padding-bottom:.2em;
 }
@@ -89,7 +90,7 @@ h2{
     margin-bottom: 1em;
     padding: 0.3em;
     line-height:1.2em;
-    color: #403F45;
+    color: #000;
 }
 
 h3 {
@@ -98,7 +99,7 @@ h3 {
     font-size: 1.3em;
     margin-top: 1.3em;
     margin-bottom: 0.7em;
-    color: #403F45;
+    color: #000;
 }
 
 img {
@@ -215,7 +216,7 @@ aside ul li {
 
 .button {
     padding: 0.5em 1em;
-    background-color: darkgray;
+    background-color: #b92b27;
     margin: 0.5em;
 }
 
@@ -226,7 +227,7 @@ aside ul li {
     display: inline-block;
     margin-left: 0.5em;
     margin-right: 0.5em;
-    border: 1px solid gray;
+    border: 1px solid #b92b27;
     position: relative;
     top: 20px;
 }
@@ -237,7 +238,7 @@ aside ul li {
 }
 
 .fillWhite {
-    background-color: white;
+    background-color: rgba(185,43,39,.74);
 }
 
 .animateFade {
@@ -397,7 +398,6 @@ fieldset p {
 .radio ul, .checkbox ul {
     list-style-type: none;
 }
-
 
 
 
