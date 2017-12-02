@@ -13,7 +13,7 @@
         if($path_parts['filename'] == 'genre' AND $genre == 'roleplay') {
             print 'activePage';}
         print '">';
-        print '<a href="genre.php?genre=roleplay">RPGs</a>';
+        print '<a href="genre.php?genre=roleplay">Role-Play</a>';
         print '</li>';
         
         
@@ -65,7 +65,7 @@
         if($path_parts['filename'] == 'genre' AND $genre == 'roleplay') {
             print 'activePage';}
         print '">';
-        print '<a href="genre.php?genre=roleplay">RPGs</a>';
+        print '<a href="genre.php?genre=roleplay">Role-Play</a>';
         print '</li>';
         
         

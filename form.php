@@ -7,9 +7,9 @@ include 'top.php';
 // SECTION: 1a.
 // We print out the post array so that we can see our form is working.
 //if ($debug) { //later you can uncomment the if statement
-print '<p>Post Arrays:</p><pre>';
-print_r($_POST);
-print '</pre>';
+//print '<p>Post Arrays:</p><pre>';
+//print_r($_POST);
+//print '</pre>';
 //}
 // %^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
@@ -35,7 +35,7 @@ $email = "nhanoian@uvm.edu";
 
 $gameTitle = '';
 
-$region = 'Northeast';
+$gameGenre = '';
 
 $season = '';
 
@@ -59,7 +59,7 @@ $firstNameERROR = false;
 $lastNameERROR = false;
 $emailERROR = false;
 $gameTitleERROR = false;
-$regionERROR = false;
+$gameGenreERROR = false;
 $seasonERROR = false;
 $animalERROR = false;
 $totalAnimalsChecked = 0;
@@ -116,8 +116,8 @@ if (isset($_POST['btnSubmit'])) {
 
     
     
-    $region = htmlentities($_POST['lstRegion'], ENT_QUOTES, 'UTF-8');
-    $dataRecord[] = $region;
+    $gameGenre = htmlentities($_POST['lstGameGenre'], ENT_QUOTES, 'UTF-8');
+    $dataRecord[] = $gameGenre;
     
     $season = htmlentities($_POST['radSeason'], ENT_QUOTES, 'UTF-8');
     $dataRecord[] = $season;
@@ -214,9 +214,9 @@ if (isset($_POST['btnSubmit'])) {
         $lastNameERROR = true;
     }
     
-    if($region == '') {
-        $errorMsg[] = 'Please choose your region';
-        $regionERROR = true;
+    if($gameGenre == '') {
+        $errorMsg[] = 'Please choose a genre';
+        $gameGenreERROR = true;
     }
     
     if ($season != 'Spring' AND $season != 'Summer' AND $season != 'Fall' AND $season != 'Winter') {
@@ -521,28 +521,22 @@ if (isset($_POST['btnSubmit'])) {
             
             
             <fieldset class="listbox">
-                <legend>What region of the U.S. are you from?</legend>
-                <select id='lstRegion' class="<?php if ($regionERROR) print 'mistake';?>"
-                        name='lstRegion'
+                <legend>What genre is your game?</legend>
+                <select id='lstgameGenre' class="<?php if ($gameGenreERROR) print 'mistake';?>"
+                        name='lstGameGenre'
                         tabindex='303'>
                             
-                    <option <?php if ($region == 'Midwest') print 'selected';?>
-                        value='Midwest'>Midwest</option>
+                    <option <?php if ($gameGenre == 'Role-Play') print 'selected';?>
+                        value='Role-Play'>Role-Play</option>
                     
-                    <option <?php if ($region == 'Northeast') print 'selected';?>
-                        value='Northeast'>Northeast</option>
+                    <option <?php if ($gameGenre == 'Action') print 'selected';?>
+                        value='Action'>Action</option>
                     
-                    <option <?php if ($region == 'Southeast') print 'selected';?>
-                        value='Southeast'>Southeast</option>
+                    <option <?php if ($gameGenre == 'Sports') print 'selected';?>
+                        value='Sports'>Sports</option>
                     
-                    <option <?php if ($region == 'Southwest') print 'selected';?>
-                        value='Southwest'>Southwest</option>
-                    
-                    <option <?php if ($region == 'West') print 'selected';?>
-                        value='West'>West</option>
-                    
-                    <option <?php if ($region == 'Not US') print 'selected';?>
-                        value='Not from U.S.'>Not from U.S.</option>
+                    <option <?php if ($gameGenre == 'Other') print 'selected';?>
+                        value='Other'>Other</option>
                     
                     
                     
