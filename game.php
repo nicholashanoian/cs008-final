@@ -54,10 +54,15 @@ print PHP_EOL;
 print PHP_EOL;
 
 // ########################### Game Info #################################### //
+
+// format date from dd/mm/yyyy to dd/mm/yy
+$date = substr($thisGame[4], 0, -4) . substr($thisGame[4], -2);
+
+
 print '<aside class="gameInfo">
     <ul>
         <li>
-            <strong>Release Date</strong>: '.$thisGame[4].' 
+            <strong>Release Date</strong>: '.$date.' 
         </li>
         <li>
             <strong>Developer</strong>: '.$thisGame[5].'
@@ -69,10 +74,10 @@ print '<aside class="gameInfo">
             <strong>Platforms</strong>: '.$thisGame[7].'
         </li>
         <li>
-            <strong>Tags</strong>: '.$thisGame[8].'
+            <strong>Age Rating</strong>: '.$thisGame[8].'
         </li>
         <li>
-            <strong>Rating</strong>: '.$thisGame[9].'
+            <strong>Tags</strong>: '.$thisGame[9].'
         </li>
     </ul>
 </aside>';
