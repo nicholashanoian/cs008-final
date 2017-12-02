@@ -57,22 +57,22 @@ print PHP_EOL;
 print '<aside class="gameInfo">
     <ul>
         <li>
-            <strong>Release Date</strong>: '.$thisGame[6].' 
+            <strong>Release Date</strong>: '.$thisGame[4].' 
         </li>
         <li>
-            <strong>Developer</strong>: '.$thisGame[7].'
+            <strong>Developer</strong>: '.$thisGame[5].'
         </li>
         <li>
-            <strong>Publisher</strong>: '.$thisGame[8].'
+            <strong>Publisher</strong>: '.$thisGame[6].'
         </li>
         <li>
-            <strong>Platforms</strong>: '.$thisGame[9].'
+            <strong>Platforms</strong>: '.$thisGame[7].'
         </li>
         <li>
-            <strong>Tags</strong>: '.$thisGame[10].'
+            <strong>Tags</strong>: '.$thisGame[8].'
         </li>
         <li>
-            <strong>Rating</strong>: '.$thisGame[4].'
+            <strong>Rating</strong>: '.$thisGame[9].'
         </li>
     </ul>
 </aside>';
@@ -110,7 +110,7 @@ print PHP_EOL;
 
 // ############################ Summary ##################################### //
 
-print '<p class="summary"><strong>Summary</strong>: ' . $thisGame[11] . '</p>';
+print '<p class="summary"><strong>Summary</strong>: ' . $thisGame[10] . '</p>';
 
 print PHP_EOL;
 print PHP_EOL;
@@ -178,7 +178,7 @@ print PHP_EOL;
 
 print '<div class="video-container">';
 
-print '<iframe width="640" height="352" src="https://youtube.com/embed/'.$thisGame[16].'" frameborder="0" allowfullscreen></iframe>';
+print '<iframe width="640" height="352" src="https://youtube.com/embed/'.$thisGame[11].'" frameborder="0" allowfullscreen></iframe>';
 
 print '</div>';
 
