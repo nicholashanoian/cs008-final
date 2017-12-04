@@ -1,7 +1,7 @@
 <!-- ####################    Start of  footer   ############################ -->
 
 <footer>
-    <p>Designed by Nicholas Hanoian and Chris McCabe</p>
+    <div class="footerContent"><p><a class="footerLink" href="index.php">VGDB</a><span class="footerCredits">Designed by Nicholas Hanoian and Chris McCabe</span></p></div>
 </footer>
 
 

@@ -59,13 +59,14 @@ print PHP_EOL;
 
 // ############################ Side Info Box ############################### //
 
-print '<div class="gameInfoContainer">';
+print '<aside class="gameInfoContainer">';
 
 print PHP_EOL;
 print PHP_EOL;
 
 
 // ########################### Rating Box ################################### //
+print '<p class="ratingLabel">Rating:</p>';
 print '<p class="rating" style="background-color:rgb(';
 print $ratingColor[0] . ',' . $ratingColor[1] . ',' . $ratingColor[2];
 print ')">' . $thisGame[3] . '</p><br>';
@@ -79,8 +80,8 @@ print PHP_EOL;
 $date = substr($thisGame[4], 0, -4) . substr($thisGame[4], -2);
 
 
-print '<aside class="gameInfo">
-    <ul>
+print '
+    <ul class="gameInfo">
         <li>
             <strong>Release Date</strong>: '.$date.' 
         </li>
@@ -99,10 +100,9 @@ print '<aside class="gameInfo">
         <li>
             <strong>Tags</strong>: '.$thisGame[9].'
         </li>
-    </ul>
-</aside>';
+    </ul>';
 
-print '</div>';
+print '</aside>';
 
 print PHP_EOL;
 print PHP_EOL;

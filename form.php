@@ -278,6 +278,7 @@ if (isset($_POST['btnSubmit'])) {
                 // txtFirstName becomes First Name
                 $camelCase = preg_split('/(?=[A-Z])/', substr($htmlName, 3));
                 $i = 1;
+                $message .= '<span class="formMessageHead">';
                 foreach ($camelCase as $oneWord) {
                     $message .= $oneWord;
                     if ($i != count($camelCase)) { //remove extra space at end of label
@@ -289,13 +290,13 @@ if (isset($_POST['btnSubmit'])) {
                 }
                 $value = htmlentities($value, ENT_QUOTES, "UTF-8");
                 if ($value == 'Xbox' OR $value == 'PlayStation' OR $value == 'PC' OR
-                        $value == 'Nintendo Switch' OR $value == 'Raccoon') {
+                        $value == 'Nintendo Switch'){
                     $value = 'Selected';
                 }
                 if ($value == 'None of these') {
                     $value = 'Selected';
                 }
-                $message .= ': ' . '<span class="formInfo">' . htmlentities($value, ENT_QUOTES, "UTF-8") . '</span></li>';
+                $message .= ': ' . '</span><span class="formInfo">' . htmlentities($value, ENT_QUOTES, "UTF-8") . '</span></li>';
             }
         }
         $message .= '</ul></div>';
@@ -446,7 +447,7 @@ if (isset($_POST['btnSubmit'])) {
 
 
 
-            <fieldset class="gameInfo">
+            <fieldset class="formGameInfo">
                 <legend>Your Game</legend>
                 <p>
                     <label class='required text-field' for='txtGameTitle'>Game Title</label>
@@ -463,7 +464,7 @@ if (isset($_POST['btnSubmit'])) {
                         >
                 </p>
                 <p>
-                    <label class='required' for='lstGameGenre'>Game Genre</label>
+                    <label class='required check-label' for='lstGameGenre'>Game Genre</label>
                     <select id='lstgameGenre' class="<?php if ($gameGenreERROR) print 'mistake'; ?>"
                             name='lstGameGenre'
                             tabindex='303'>
@@ -557,7 +558,7 @@ if (isset($_POST['btnSubmit'])) {
 
 
             <fieldset class='checkbox'>
-                <legend>Which platform(s) do you play video games on?</legend>
+                <legend>Which platform(s) do you use?</legend>
                 <ul class="<?php if ($platformERROR) print "mistake"; ?>">
                     <li>
                         <label class="check-field">
