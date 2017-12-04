@@ -29,6 +29,8 @@ nav ol {
 }
 .activePage{
     background-color: #d96c69;
+    border: 1px solid #d96c69;
+    border-radius:.1em;
 }
 #topnav ol{
     margin-top: 0;
