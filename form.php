@@ -31,20 +31,19 @@ $firstName = '';
 
 $lastName = '';
 
-$email = "nhanoian@uvm.edu";
+$email = '';
 
 $gameTitle = '';
 
 $gameGenre = '';
 
-$season = '';
+$age = '';
 
-$bear = false;
-$deer = false;
-$moose = false;
-$owl = false;
-$raccoon = false;
-$noAnimals = false;
+$xbox = false;
+$playstation = false;
+$pc = false;
+$nswitch = false;
+$noPlatforms= false;
 
 
 
@@ -60,9 +59,9 @@ $lastNameERROR = false;
 $emailERROR = false;
 $gameTitleERROR = false;
 $gameGenreERROR = false;
-$seasonERROR = false;
-$animalERROR = false;
-$totalAnimalsChecked = 0;
+$ageERROR = false;
+$platformERROR = false;
+$totalPlatformsChecked = 0;
 
 // %^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
@@ -119,57 +118,49 @@ if (isset($_POST['btnSubmit'])) {
     $gameGenre = htmlentities($_POST['lstGameGenre'], ENT_QUOTES, 'UTF-8');
     $dataRecord[] = $gameGenre;
     
-    $season = htmlentities($_POST['radSeason'], ENT_QUOTES, 'UTF-8');
-    $dataRecord[] = $season;
+    $age = htmlentities($_POST['radAge'], ENT_QUOTES, 'UTF-8');
+    $dataRecord[] = $age;
     
-    if (isset($_POST['chkBear'])) {
-        $bear = true;
-        $totalAnimalsChecked++;
+    if (isset($_POST['chkXbox'])) {
+        $xbox = true;
+        $totalPlatformsChecked++;
     } else {
-        $bear = false;
+        $xbox = false;
     }
-    $dataRecord[] = $bear;
+    $dataRecord[] = $xbox;
     
-    if (isset($_POST['chkDeer'])) {
-        $deer = true;
-        $totalAnimalsChecked++;
+    if (isset($_POST['chkPlayStation'])) {
+        $playstation = true;
+        $totalPlatformsChecked++;
     } else {
-        $deer = false;
+        $playstation = false;
     }
-    $dataRecord[] = $deer;
+    $dataRecord[] = $playstation;
     
-    if (isset($_POST['chkMoose'])) {
-        $moose = true;
-        $totalAnimalsChecked++;
+    if (isset($_POST['chkPC'])) {
+        $pc = true;
+        $totalPlatformsChecked++;
     } else {
-        $moose = false;
+        $pc = false;
     }
-    $dataRecord[] = $moose;
+    $dataRecord[] = $pc;
     
-    if (isset($_POST['chkOwl'])) {
-        $owl = true;
-        $totalAnimalsChecked++;
+    if (isset($_POST['chkNintendoSwitch'])) {
+        $nswitch = true;
+        $totalPlatformsChecked++;
     } else {
-        $owl = false;
+        $nswitch = false;
     }
-    $dataRecord[] = $owl;
-    
-    if (isset($_POST['chkRaccoon'])) {
-        $raccoon = true;
-        $totalAnimalsChecked++;
-    } else {
-        $raccoon = false;
-    }
-    $dataRecord[] = $raccoon;
+    $dataRecord[] = $nswitch;
 
-    if (isset($_POST['chkNoAnimals'])) {
-        $noAnimals = true;
-        $totalAnimalsChecked++;
-    } else {
-        $noAnimals = false;
-    }
-    $dataRecord[] = $noAnimals;
 
+    if (isset($_POST['chkNoPlatforms'])) {
+        $noPlatforms = true;
+        $totalPlatformsChecked++;
+    } else {
+        $noPlatforms = false;
+    }
+    $dataRecord[] = $noPlatforms;
 
     //@@@@@@@@@@@@@@@@@@@@@@@
     //
@@ -219,19 +210,18 @@ if (isset($_POST['btnSubmit'])) {
         $gameGenreERROR = true;
     }
     
-    if ($season != 'Spring' AND $season != 'Summer' AND $season != 'Fall' AND $season != 'Winter') {
-        $errorMsg[] = 'Please choose a favorite season';
-        $seasonERROR = true;
+    if ($age != 'Under 12 years old' AND $age != '12-17 years old' AND $age != '18-34 years old' AND $age != '35-54 years old' AND $age != 'Over 54 years old') {
+        $errorMsg[] = 'Please choose an age range';
+        $ageERROR = true;
     }
     
-    if($totalAnimalsChecked < 1) {
-        $errorMsg[] = 'Please choose at least one animal, or select the "None of these" option';
-        $animalERROR = true;
-    } elseif ($noAnimals AND ($bear OR $deer OR $moose OR $owl OR $raccoon)) {
+    if($totalPlatformsChecked < 1) {
+        $errorMsg[] = 'Please choose at least one platform';
+        $platformERROR = true;
+    } elseif ($noPlatforms AND ($xbox OR $playstation OR $pc OR $nswitch)) {
         $errorMsg[] = 'You cannot select "None of these" along with other options';
-        $animalERROR = true;
+        $platformERROR = true;
     }
-    
     
     
     
@@ -254,7 +244,7 @@ if (isset($_POST['btnSubmit'])) {
         // This block saves the data to a CSV file.
         $myFolder = 'data/';
 
-        $myFileName = 'registration';
+        $myFileName = 'requests';
 
         $fileExt = '.csv';
 
@@ -291,13 +281,15 @@ if (isset($_POST['btnSubmit'])) {
                 foreach ($camelCase as $oneWord) {
                     $message .= $oneWord;
                     if ($i != count($camelCase)) { //remove extra space at end of label
-                        $message .= ' ';
+                        if($camelCase != ['','P','C'] AND $camelCase != ['', 'Play', 'Station']) { //prevent from printing "P C" instead of "PC" and "Play Station"
+                            $message .= ' ';
+                        }
                     }
                     $i++;
                 }
                 $value = htmlentities($value, ENT_QUOTES, "UTF-8");
-                if($value == 'Bear' OR $value == 'Deer' OR $value == 'Moose' OR
-                        $value == 'Owl' OR $value == 'Raccoon') {
+                if($value == 'Xbox' OR $value == 'PlayStation' OR $value == 'PC' OR
+                        $value == 'Nintendo Switch' OR $value == 'Raccoon') {
                     $value = 'Selected';
                 }
                 if($value == 'None of these') {
@@ -317,15 +309,15 @@ if (isset($_POST['btnSubmit'])) {
         $cc = '';
         $bcc = '';
 
-        $from = 'Save The Planet<mail@nhanoian.uvm.edu>';
+        $from = 'VGDB<mail@nhanoian.uvm.edu>';
 
         // subject of mail should make sense to your form
-        $subject = 'Our Changing Planet';
+        $subject = 'Game Addition Request';
 
-        $emailMessage = '<h2>Thanks for joining!</h2>';
-        $emailMessage .= '<fig><img src="https://nhanoian.w3.uvm.edu/cs008/images/camel.jpg" alt=""></fig><!-- Photo courtesy of UVM Bored -->';
+        $emailMessage = '<h2>Thanks for submitting your request!</h2>';
+        $emailMessage .= '<fig><img src="https://nhanoian.w3.uvm.edu/cs008-final/images/pacman.jpg" alt=""></fig><!-- Photo courtesy of freecodecamp.org -->';
         $emailMessage .= $message;
-        $emailMessage .= '<br><h3><a href="https://nhanoian.w3.uvm.edu/cs008/lab10/index.php">Our Changing Planet</a></h3>';
+        $emailMessage .= '<br><h3><a href="https://nhanoian.w3.uvm.edu/cs008-final/index.php">Video Game Database</a></h3>';
 
 
         $mailed = sendMail($to, $cc, $bcc, $from, $subject, $emailMessage);
@@ -349,13 +341,13 @@ if (isset($_POST['btnSubmit'])) {
     if (isset($_POST['btnSubmit']) AND empty($errorMsg)) { //closing of if marked with: end body submit
         print '<h3>Thank you for submitting your suggestion.</h3>';
 
-        print '<div class="message"><p class="noBottom">For your records, a copy of this data has ';
+        print '<p class="form-heading">For your records, a copy of this data has ';
 
         if (!$mailed) {
             print "not ";
         }
         print 'been sent to: </p>';
-        print '<p class="center noTop"><span class="formInfo">' . $email . '</span></p></div>';
+        print '<p class="center message emailContainer"><span class="formInfo">' . $email . '</span></p>';
 
         print $message;
     } else {
@@ -400,7 +392,7 @@ if (isset($_POST['btnSubmit'])) {
         ?>
 
         <form action="<?php print $phpSelf; ?>"
-              id="frmRegister"
+              id="frmRequests"
               method="post">
 
             <fieldset class="contact">
@@ -472,52 +464,6 @@ if (isset($_POST['btnSubmit'])) {
                 </p>
             </fieldset>             
                 
-                
-                
-                
-                
-                
-                
-                
-<!--                <ul class="<?php if ($genderERROR) print 'mistake'; ?>">
-                    <li>
-                        <label class="radio-field">
-                            <input type="radio"
-                                   id="radGenderMale"
-                                   name="radGender"
-                                   value="Male"
-                                   tabindex="272"
-                                   <?php if ($gender == 'Male') print 'checked'; ?>>
-                            Male</label>
-                    </li>
-
-                    <li>
-                        <label class="radio-field">
-                            <input type="radio"
-                                   id="radGenderFemale"
-                                   name="radGender"
-                                   value="Female"
-                                   tabindex="282"
-                                   <?php if ($gender == 'Female') print 'checked'; ?>>
-
-                            Female</label>
-                    </li>
-
-                    <li>
-                        <label class="radio-field">
-                            <input type="radio"
-                                   id="radGenderOther"
-                                   name="radGender"
-                                   value="Other"
-                                   tabindex="292"
-                                   <?php if ($gender == 'Other') print 'checked'; ?>>
-
-                            Other</label>
-                    </li>
-                </ul>-->
-
-
-
             
             
             <fieldset class="listbox">
@@ -547,53 +493,65 @@ if (isset($_POST['btnSubmit'])) {
             </fieldset>
             
             <fieldset class="radio">
-                <legend>What is your favorite season?</legend>
-                <ul class="<?php if ($seasonERROR) print 'mistake'; ?>">
+                <legend>How old are you?</legend>
+                <ul class="<?php if ($ageERROR) print 'mistake'; ?>">
                     <li>
                         <label class="radio-field">
                             <input type="radio"
-                                   id="radSeasonSpring"
-                                   name="radSeason"
-                                   value="Spring"
+                                   id="radAgeUnder 12 years old"
+                                   name="radAge"
+                                   value="Under 12 years old"
                                    tabindex="672"
-                                   <?php if ($season == 'Spring') print 'checked'; ?>>
-                            Spring</label>
+                                   <?php if ($age == 'Under 12 years old') print 'checked'; ?>>
+                            Under 12 years old</label>
                     </li>
 
                     <li>
                         <label class="radio-field">
                             <input type="radio"
-                                   id="radSeasonSummer"
-                                   name="radSeason"
-                                   value="Summer"
+                                   id="radAge12-17 years old"
+                                   name="radAge"
+                                   value="12-17 years old"
                                    tabindex="682"
-                                   <?php if ($season == 'Summer') print 'checked'; ?>>
+                                   <?php if ($age == '12-17 years old') print 'checked'; ?>>
 
-                            Summer</label>
+                            12-17 years old</label>
                     </li>
 
                     <li>
                         <label class="radio-field">
                             <input type="radio"
-                                   id="radSeasonFall"
-                                   name="radSeason"
-                                   value="Fall"
+                                   id="radAge18-34 years old"
+                                   name="radAge"
+                                   value="18-34 years old"
                                    tabindex="692"
-                                   <?php if ($season == 'Fall') print 'checked'; ?>>
+                                   <?php if ($age == '18-34 years old') print 'checked'; ?>>
 
-                            Fall</label>
+                            18-34 years old</label>
                     </li>
 
                     <li>
                         <label class="radio-field">
                             <input type="radio"
-                                   id="radSeasonWinter"
-                                   name="radSeason"
-                                   value="Winter"
+                                   id="radAge35-54 years old"
+                                   name="radAge"
+                                   value="35-54 years old"
                                    tabindex="695"
-                                   <?php if ($season == 'Winter') print 'checked'; ?>>
+                                   <?php if ($age == '35-54 years old') print 'checked'; ?>>
 
-                            Winter</label>
+                            35-54 years old</label>
+                    </li>
+                    
+                    <li>
+                        <label class="radio-field">
+                            <input type="radio"
+                                   id="radAgeOver 54 years old"
+                                   name="radAge"
+                                   value="Over 54 years old"
+                                   tabindex="698"
+                                   <?php if ($age == 'Over 54 years old') print 'checked'; ?>>
+
+                            Over 54 years old</label>
                     </li>
                 </ul>
 
@@ -602,68 +560,57 @@ if (isset($_POST['btnSubmit'])) {
             
             
             <fieldset class='checkbox'>
-                <legend>Which animals have you seen in nature?</legend>
-                <ul class="<?php if($animalERROR) print "mistake";?>">
+                <legend>Which platform(s) do you play video games on?</legend>
+                <ul class="<?php if($platformERROR) print "mistake";?>">
                     <li>
                         <label class="check-field">
-                            <input <?php if ($bear) print 'checked';?>
-                                id="chkBear"
-                                name="chkBear"
+                            <input <?php if ($xbox) print 'checked';?>
+                                id="chkXbox"
+                                name="chkXbox"
                                 tabindex="801"
                                 type="checkbox"
-                                value="Bear">
-                        Bear</label>
+                                value="Xbox">
+                        Xbox</label>
                     </li>
                     
                     <li>
                         <label class="check-field">
-                            <input <?php if ($deer) print 'checked';?>
-                                id="chkDeer"
-                                name="chkDeer"
+                            <input <?php if ($playstation) print 'checked';?>
+                                id="chkPlayStation"
+                                name="chkPlayStation"
                                 tabindex="811"
                                 type="checkbox"
-                                value="Deer">
-                        Deer</label>
+                                value="PlayStation">
+                        PlayStation</label>
                     </li>
                     
                     <li>
                         <label class="check-field">
-                            <input <?php if ($moose) print 'checked';?>
-                                id="chkMoose"
-                                name="chkMoose"
+                            <input <?php if ($pc) print 'checked';?>
+                                id="chkPC"
+                                name="chkPC"
                                 tabindex="821"
                                 type="checkbox"
-                                value="Moose">
-                        Moose</label>
+                                value="PC">
+                        PC</label>
                     </li>
                     
                     <li>
                         <label class="check-field">
-                            <input <?php if ($owl) print 'checked';?>
-                                id="chkOwl"
-                                name="chkOwl"
+                            <input <?php if ($nswitch) print 'checked';?>
+                                id="chkNintendoSwitch"
+                                name="chkNintendoSwitch"
                                 tabindex="831"
                                 type="checkbox"
-                                value="Owl">
-                        Owl</label>
+                                value="Nintendo Switch">
+                        Nintendo Switch</label>
                     </li>
                     
                     <li>
                         <label class="check-field">
-                            <input <?php if ($raccoon) print 'checked';?>
-                                id="chkRaccoon"
-                                name="chkRaccoon"
-                                tabindex="841"
-                                type="checkbox"
-                                value="Raccoon">
-                        Raccoon</label>
-                    </li>
-                    
-                    <li>
-                        <label class="check-field">
-                            <input <?php if ($noAnimals) print 'checked';?>
-                                id="chkNoAnimals"
-                                name="chkNoAnimals"
+                            <input <?php if ($noPlatforms) print 'checked';?>
+                                id="chkNoPlatforms"
+                                name="chkNoPlatforms"
                                 tabindex="851"
                                 type="checkbox"
                                 value="None of these">
@@ -696,7 +643,7 @@ if (isset($_POST['btnSubmit'])) {
 
             <fieldset class="buttons">
 
-                <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="Register">
+                <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="Submit">
             </fieldset>
 
 
