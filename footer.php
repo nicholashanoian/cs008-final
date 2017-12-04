@@ -11,7 +11,10 @@
 var slideIndex = 0;
 var slidesTimer;
 
-startUp();
+
+if(location.pathname == '/cs008-final/game.php') {
+    startUp();
+}
 
 
 function startUp() {

@@ -24,7 +24,7 @@ nav ol {
     text-align: center;
     margin: 1em auto;
 }
-.activePage{
+#topnav ol li.activePage{
     background-color: #d96c69;
     border: 1px solid #d96c69;
     border-radius:.1em;
@@ -37,6 +37,7 @@ nav ol {
     display: inline-block;
     list-style-type: none;
     width: 6em;
+    border: 1px solid #eee;
 }
 
 nav a{
@@ -132,19 +133,21 @@ pre {
     font-size: 200%;
     line-height: initial;
     padding: 0.5em;
+    width: 2em;
+    display: inline;
 }
 
 
 article {
     max-width: 39em;
     margin: auto;
-    padding: 1em;
+    padding: 1em 3em;
 }
 
 footer {
     max-width: 39em;
     margin: auto;
-    padding: 1em;
+    padding: 1em 2em;
 
 }
 
@@ -416,4 +419,29 @@ select {
     padding: 0.3em 0;
     margin: 1em 2.5em;
     width: 10em;
+}
+
+
+@media screen and (max-width: 970px) {
+    .coverArt {
+        display: block;
+        text-align: center;
+    }
+    .gameInfoContainer {
+        float: none;
+        margin: 0.5em auto 1em auto;
+        width: 10em;
+    }
+}
+
+
+
+@media screen and (max-width: 420px) {
+/*    .smallButton {
+        display: none;
+    }*/
+
+/*    .smallButton{
+        top:50px;
+    }*/
 }

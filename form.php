@@ -43,7 +43,7 @@ $xbox = false;
 $playstation = false;
 $pc = false;
 $nswitch = false;
-$noPlatforms= false;
+$noPlatforms = false;
 
 
 
@@ -113,14 +113,14 @@ if (isset($_POST['btnSubmit'])) {
     $gameTitle = htmlentities($_POST['txtGameTitle'], ENT_QUOTES, 'UTF-8');
     $dataRecord[] = $gameTitle;
 
-    
-    
+
+
     $gameGenre = htmlentities($_POST['lstGameGenre'], ENT_QUOTES, 'UTF-8');
     $dataRecord[] = $gameGenre;
-    
+
     $age = htmlentities($_POST['radAge'], ENT_QUOTES, 'UTF-8');
     $dataRecord[] = $age;
-    
+
     if (isset($_POST['chkXbox'])) {
         $xbox = true;
         $totalPlatformsChecked++;
@@ -128,7 +128,7 @@ if (isset($_POST['btnSubmit'])) {
         $xbox = false;
     }
     $dataRecord[] = $xbox;
-    
+
     if (isset($_POST['chkPlayStation'])) {
         $playstation = true;
         $totalPlatformsChecked++;
@@ -136,7 +136,7 @@ if (isset($_POST['btnSubmit'])) {
         $playstation = false;
     }
     $dataRecord[] = $playstation;
-    
+
     if (isset($_POST['chkPC'])) {
         $pc = true;
         $totalPlatformsChecked++;
@@ -144,7 +144,7 @@ if (isset($_POST['btnSubmit'])) {
         $pc = false;
     }
     $dataRecord[] = $pc;
-    
+
     if (isset($_POST['chkNintendoSwitch'])) {
         $nswitch = true;
         $totalPlatformsChecked++;
@@ -204,28 +204,28 @@ if (isset($_POST['btnSubmit'])) {
         $errorMsg[] = 'Your game title appears to have extra characters.';
         $lastNameERROR = true;
     }
-    
-    if($gameGenre == '') {
+
+    if ($gameGenre == '') {
         $errorMsg[] = 'Please choose a genre';
         $gameGenreERROR = true;
     }
-    
+
     if ($age != 'Under 12 years old' AND $age != '12-17 years old' AND $age != '18-34 years old' AND $age != '35-54 years old' AND $age != 'Over 54 years old') {
         $errorMsg[] = 'Please choose an age range';
         $ageERROR = true;
     }
-    
-    if($totalPlatformsChecked < 1) {
+
+    if ($totalPlatformsChecked < 1) {
         $errorMsg[] = 'Please choose at least one platform';
         $platformERROR = true;
-    } elseif ($noPlatforms AND ($xbox OR $playstation OR $pc OR $nswitch)) {
+    } elseif ($noPlatforms AND ( $xbox OR $playstation OR $pc OR $nswitch)) {
         $errorMsg[] = 'You cannot select "None of these" along with other options';
         $platformERROR = true;
     }
-    
-    
-    
-    
+
+
+
+
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@
     //
     // SECTION: 2d Process Form - Passed Validation
@@ -281,18 +281,18 @@ if (isset($_POST['btnSubmit'])) {
                 foreach ($camelCase as $oneWord) {
                     $message .= $oneWord;
                     if ($i != count($camelCase)) { //remove extra space at end of label
-                        if($camelCase != ['','P','C'] AND $camelCase != ['', 'Play', 'Station']) { //prevent from printing "P C" instead of "PC" and "Play Station"
+                        if ($camelCase != ['', 'P', 'C'] AND $camelCase != ['', 'Play', 'Station']) { //prevent from printing "P C" instead of "PC" and "Play Station"
                             $message .= ' ';
                         }
                     }
                     $i++;
                 }
                 $value = htmlentities($value, ENT_QUOTES, "UTF-8");
-                if($value == 'Xbox' OR $value == 'PlayStation' OR $value == 'PC' OR
+                if ($value == 'Xbox' OR $value == 'PlayStation' OR $value == 'PC' OR
                         $value == 'Nintendo Switch' OR $value == 'Raccoon') {
                     $value = 'Selected';
                 }
-                if($value == 'None of these') {
+                if ($value == 'None of these') {
                     $value = 'Selected';
                 }
                 $message .= ': ' . '<span class="formInfo">' . htmlentities($value, ENT_QUOTES, "UTF-8") . '</span></li>';
@@ -462,36 +462,33 @@ if (isset($_POST['btnSubmit'])) {
                         value='<?php print $gameTitle; ?>'
                         >
                 </p>
-            </fieldset>             
-                
-            
-            
-            <fieldset class="listbox">
-                <legend>What genre is your game?</legend>
-                <select id='lstgameGenre' class="<?php if ($gameGenreERROR) print 'mistake';?>"
-                        name='lstGameGenre'
-                        tabindex='303'>
-                            
-                    <option <?php if ($gameGenre == 'Role-Play') print 'selected';?>
-                        value='Role-Play'>Role-Play</option>
-                    
-                    <option <?php if ($gameGenre == 'Action') print 'selected';?>
-                        value='Action'>Action</option>
-                    
-                    <option <?php if ($gameGenre == 'Sports') print 'selected';?>
-                        value='Sports'>Sports</option>
-                    
-                    <option <?php if ($gameGenre == 'Other') print 'selected';?>
-                        value='Other'>Other</option>
-                    
-                    
-                    
-                </select>
-                
-                
-                
+                <p>
+                    <label class='required' for='lstGameGenre'>Game Genre</label>
+                    <select id='lstgameGenre' class="<?php if ($gameGenreERROR) print 'mistake'; ?>"
+                            name='lstGameGenre'
+                            tabindex='303'>
+
+                        <option <?php if ($gameGenre == 'Role-Play') print 'selected'; ?>
+                            value='Role-Play'>Role-Play</option>
+
+                        <option <?php if ($gameGenre == 'Action') print 'selected'; ?>
+                            value='Action'>Action</option>
+
+                        <option <?php if ($gameGenre == 'Sports') print 'selected'; ?>
+                            value='Sports'>Sports</option>
+
+                        <option <?php if ($gameGenre == 'Other') print 'selected'; ?>
+                            value='Other'>Other</option>
+
+
+
+                    </select>
+                </p>
+
+
+
             </fieldset>
-            
+
             <fieldset class="radio">
                 <legend>How old are you?</legend>
                 <ul class="<?php if ($ageERROR) print 'mistake'; ?>">
@@ -541,7 +538,7 @@ if (isset($_POST['btnSubmit'])) {
 
                             35-54 years old</label>
                     </li>
-                    
+
                     <li>
                         <label class="radio-field">
                             <input type="radio"
@@ -556,90 +553,90 @@ if (isset($_POST['btnSubmit'])) {
                 </ul>
 
             </fieldset>
-            
-            
-            
+
+
+
             <fieldset class='checkbox'>
                 <legend>Which platform(s) do you play video games on?</legend>
-                <ul class="<?php if($platformERROR) print "mistake";?>">
+                <ul class="<?php if ($platformERROR) print "mistake"; ?>">
                     <li>
                         <label class="check-field">
-                            <input <?php if ($xbox) print 'checked';?>
+                            <input <?php if ($xbox) print 'checked'; ?>
                                 id="chkXbox"
                                 name="chkXbox"
                                 tabindex="801"
                                 type="checkbox"
                                 value="Xbox">
-                        Xbox</label>
+                            Xbox</label>
                     </li>
-                    
+
                     <li>
                         <label class="check-field">
-                            <input <?php if ($playstation) print 'checked';?>
+                            <input <?php if ($playstation) print 'checked'; ?>
                                 id="chkPlayStation"
                                 name="chkPlayStation"
                                 tabindex="811"
                                 type="checkbox"
                                 value="PlayStation">
-                        PlayStation</label>
+                            PlayStation</label>
                     </li>
-                    
+
                     <li>
                         <label class="check-field">
-                            <input <?php if ($pc) print 'checked';?>
+                            <input <?php if ($pc) print 'checked'; ?>
                                 id="chkPC"
                                 name="chkPC"
                                 tabindex="821"
                                 type="checkbox"
                                 value="PC">
-                        PC</label>
+                            PC</label>
                     </li>
-                    
+
                     <li>
                         <label class="check-field">
-                            <input <?php if ($nswitch) print 'checked';?>
+                            <input <?php if ($nswitch) print 'checked'; ?>
                                 id="chkNintendoSwitch"
                                 name="chkNintendoSwitch"
                                 tabindex="831"
                                 type="checkbox"
                                 value="Nintendo Switch">
-                        Nintendo Switch</label>
+                            Nintendo Switch</label>
                     </li>
-                    
+
                     <li>
                         <label class="check-field">
-                            <input <?php if ($noPlatforms) print 'checked';?>
+                            <input <?php if ($noPlatforms) print 'checked'; ?>
                                 id="chkNoPlatforms"
                                 name="chkNoPlatforms"
                                 tabindex="851"
                                 type="checkbox"
                                 value="None of these">
-                        None of these</label>
+                            None of these</label>
                     </li>
-                    
-                    
+
+
                 </ul>
-                
-                
+
+
             </fieldset>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <fieldset class="buttons">
 

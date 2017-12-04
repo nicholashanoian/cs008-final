@@ -66,9 +66,9 @@ print PHP_EOL;
 
 
 // ########################### Rating Box ################################### //
-print '<fig class="rating" style="background-color:rgb(';
+print '<p class="rating" style="background-color:rgb(';
 print $ratingColor[0] . ',' . $ratingColor[1] . ',' . $ratingColor[2];
-print ')">' . $thisGame[3] . '</fig><br>';
+print ')">' . $thisGame[3] . '</p><br>';
 
 print PHP_EOL;
 print PHP_EOL;
@@ -126,9 +126,9 @@ foreach ($gameCoverArt as $fileInfo) {
 
 
 //print html for showing that image
-print '<fig class="coverArt"><img src="' . $coverArtPath;
+print '<div class="coverArt"><img src="' . $coverArtPath;
 print $coverArtEntries[0];
-print '"></fig>';
+print '" alt=""></div>';
 
 print PHP_EOL;
 print PHP_EOL;
@@ -203,7 +203,7 @@ print PHP_EOL;
 
 print '<div class="video-container">';
 
-print '<iframe width="640" height="352" src="https://youtube.com/embed/'.$thisGame[11].'" frameborder="0" allowfullscreen></iframe>';
+print '<iframe width="640" height="352" src="https://youtube.com/embed/'.$thisGame[11].'" allowfullscreen></iframe>';
 
 print '</div>';
 
