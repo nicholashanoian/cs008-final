@@ -126,9 +126,9 @@ foreach ($gameCoverArt as $fileInfo) {
 
 
 //print html for showing that image
-print '<div class="coverArt"><img src="' . $coverArtPath;
+print '<figure class="coverArt"><img src="' . $coverArtPath;
 print $coverArtEntries[0];
-print '" alt=""></div>';
+print '" alt=""></figure>';
 
 print PHP_EOL;
 print PHP_EOL;
