@@ -109,12 +109,15 @@ footer .footerContent {
     max-width: 39em;
     margin: auto;
     position: relative;
-    top: 35px;
+    top: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 footer p {
     margin: 0;
     font-size: 0.8em;
+    text-align: center;
 }
 
 .pushFooter {
@@ -129,6 +132,11 @@ footer p {
     color: #400;
 }
 
+.footerLink:after {
+    content:"\a";
+    white-space: pre;
+}
+
 .footerLink:visited {
     color: #400;
 }
@@ -138,7 +146,7 @@ footer p {
 }
 
 .footerCredits {
-    padding-left: 12em;
+    
 }
 
 
