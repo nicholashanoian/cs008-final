@@ -189,6 +189,10 @@ pre {
     margin-right: auto;
 }
 
+
+
+
+
 .rating {
     font-size: 200%;
     line-height: initial;
@@ -204,6 +208,11 @@ article {
     margin: auto;
     padding: 1em 5% 7em 5%;
 }
+
+article.home {
+    padding-bottom: 24em;
+}
+
 
 .genre p {
     margin-top: 0;
