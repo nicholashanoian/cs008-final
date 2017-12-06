@@ -507,6 +507,23 @@ select {
     padding: 0.3em 1em 1.5em 1em;
 }
 
+.homeCoverArt {
+    float: left;
+    width: 30%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.homeCoverArt img{
+    width: 100%;
+}
+
+.homeCoverArtContainer {
+    text-align: center;
+}
+
 @media screen and (max-width: 970px) {
     .coverArt {
         display: block;

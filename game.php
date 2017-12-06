@@ -110,24 +110,11 @@ print PHP_EOL;
 
 // ############################ Cover Art ################################### //
 
-//setup path to folder containing cover art
-$coverArtPath = 'images/cover-art/';
-$coverArtPath .= $thisGame[0];
-$coverArtPath .= '/';
-
-//create new iterator of that folder
-$gameCoverArt = new FilesystemIterator($coverArtPath);
-
-//create array containing file names of that folder
-$coverArtEntries = array();
-foreach ($gameCoverArt as $fileInfo) {
-    $coverArtEntries[] = $fileInfo -> getFilename();
-}
-
+$coverArtPath = getImagePathArray('images/cover-art/', $thisGame[0]);
 
 //print html for showing that image
-print '<figure class="coverArt"><img src="' . $coverArtPath;
-print $coverArtEntries[0];
+print '<figure class="coverArt"><img src="';
+print $coverArtPath[0];
 print '" alt=""></figure>';
 
 print PHP_EOL;
@@ -145,28 +132,15 @@ print PHP_EOL;
 
 
 //setup path to folder containing screenshots
-$screenshotPath = 'images/screenshots/';
-$screenshotPath .= $thisGame[0];
-$screenshotPath .= '/';
-
-//create new iterator of that folder
-$gameScreenshots = new FilesystemIterator($screenshotPath);
-
-//create array containing file names of that folder
-$screenshotEntries = array();
-foreach ($gameScreenshots as $fileInfo) {
-    $screenshotEntries[] = $fileInfo -> getFilename();
-}
-
-
+$screenshotPaths = getImagePathArray('images/screenshots/', $thisGame[0]);
 
 //create div to hold all images in the folder
 print '<div id="screenshotContainer">';
 
 //print images with sources from the array
-foreach ($screenshotEntries as $src) {
-    print '<img class="screenshotSlides" src="' . $screenshotPath;
-    print $src;
+foreach ($screenshotPaths as $screenshotPath) {
+    print '<img class="screenshotSlides" src="';
+    print $screenshotPath;
     print '" alt="">';
     print PHP_EOL;
 }
@@ -179,7 +153,7 @@ print '<div class="left button" onclick="moveImg(-1)">&#10094;</div>';
 print '<div class="right button" onclick="moveImg(1)">&#10095;</div>';
 
 //for each image in slider add a bottom button
-for ($i; $i < count($screenshotEntries); $i++) {
+for ($i; $i < count($screenshotPaths); $i++) {
     print '<div class="smallButton demo" onclick="setImg('; 
     if ($i == 0) {
         print '0'; //php didn't want to print a zero (printed nothing) so had to force it
