@@ -70,9 +70,9 @@ print '<html id="' . $path_parts['filename'] . 'Background" lang="en">';
     if ($path_parts['filename'] == "game") {
         include 'lib/rating-gradient.php';
     }
-    if ($path_parts['filename'] == 'game' OR $path_parts['filename'] == 'index') {
-        include 'lib/getImagePathArray.php';
-    }
+    
+    include 'lib/getImagePathArray.php';
+    
     print PHP_EOL . '<!-- finished including libraries -->' . PHP_EOL;
 
     print PHP_EOL . '<!-- start reading data -->' . PHP_EOL;

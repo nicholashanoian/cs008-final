@@ -37,6 +37,7 @@ $recentGames = [$gameData[$firstRecentIndex], $gameData[$secondRecentIndex], $ga
 
 
 
+
 print '<article class="home">';
 
 
@@ -59,7 +60,6 @@ for($i = 0; $i < count($recentGames); $i++) {
 print '</div>';
 
 print '</article>';
-
 
 
 

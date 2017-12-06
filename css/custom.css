@@ -64,7 +64,7 @@ nav a:hover{
 .breadcrumbContainer {
     max-width: 39em;
     margin: auto;
-    padding: 1em 1em 0 1em;
+    padding: 1em 5% 0 5%;
 }
 
 ol ol {
@@ -524,6 +524,40 @@ select {
     text-align: center;
 }
 
+.characterLeft {
+    width: 75px;
+    position: absolute;
+    left: 2%;
+    overflow: hidden;
+}
+
+.characterRight {
+    width: 75px;
+    position: absolute;
+    left: calc(98% - 75px);
+    overflow: hidden;
+}
+
+.characterContainerLeft, .characterContainerRight {
+    overflow: hidden;
+}
+
+#creed {
+    top: 150px;
+}
+
+#link {
+    top: 300px;
+}
+
+#mario {
+    top: 450px;
+}
+
+#pacman {
+    top: 600px;
+}
+
 @media screen and (max-width: 970px) {
     .coverArt {
         display: block;
@@ -532,5 +566,11 @@ select {
     .gameInfoContainer {
         float: none;
         margin: 0.5em auto 1em auto;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .characterLeft, .characterRight {
+        display: none;
     }
 }

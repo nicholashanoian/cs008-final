@@ -52,4 +52,31 @@
     </ol>
 </nav>
 
+<?php
+
+$yInitial = 150;
+$yOffset = 200;
+
+print '<div class="characterContainerLeft">';
+
+$characterPaths = getImagePathArray('images/', 'characters-left');
+for($i = 0; $i < count($characterPaths); $i++) {
+    print '<img class="characterLeft" style="top:'. ($yInitial + ($yOffset * $i)) .'px;"';
+    print 'src="'. $characterPaths[$i] . '">';
+}
+
+print '</div>';
+
+
+print '<div class="characterContainerRight">';
+
+$characterPaths = getImagePathArray('images/', 'characters-right');
+for($i = 0; $i < count($characterPaths); $i++) {
+    print '<img class="characterRight" style="top:'. ($yInitial + ($yOffset * $i)) .'px;"';
+    print 'src="'. $characterPaths[$i] . '">';
+}
+
+print '</div>';
+?>
+
 <!-- ####################    End of  Nav   ############################ -->
