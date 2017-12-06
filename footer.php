@@ -72,5 +72,53 @@ function setImg(n) {
     slidesTimer = setInterval('moveImg(1)', 3000);
 }
 
+
+
+
+
+function setBorder() {
+ 
+    footer = document.getElementsByTagName('footer');
+    footerBox = footer[0].getBoundingClientRect();
+
+    characterLefts = document.getElementsByClassName("characterLeft");
+    characterRights = document.getElementsByClassName("characterRight");
+
+    for (var i = 0; i < characterLefts.length; i++) {
+        thisBox = characterLefts[i].getBoundingClientRect();    
+
+        if(thisBox.top > footerBox.top) {
+            characterLefts[i].className += " hidden";
+        } else {
+            characterLefts[i].className = characterLefts[i].className.replace(" hidden", "");
+        }
+    }
+
+    for (var i = 0; i < characterRights.length; i++) {
+        thisBox = characterRights[i].getBoundingClientRect();    
+
+        if(thisBox.top+20 > footerBox.top) {
+            characterRights[i].className += " hidden";
+        } else {
+            characterRights[i].className = characterRights[i].className.replace(" hidden", "");
+        }
+    }
+    
+}
+
+window.onload = setBorder;
+window.onresize = setBorder;
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 <!-- ####################    End of  footer     ############################ -->

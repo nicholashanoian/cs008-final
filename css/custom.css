@@ -567,6 +567,10 @@ select {
     top: 600px;
 }
 
+.hidden {
+    display: none;
+}
+
 @media screen and (max-width: 970px) {
     .coverArt {
         display: block;
