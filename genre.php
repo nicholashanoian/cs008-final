@@ -39,10 +39,28 @@ if($genre == 'action') {
 
 print '<ol>';
 
-foreach ($gameData as $gameRecord) {
-    if($gameRecord[2] == $genre) {
-        print '<li><a href="game.php?gameID=' . $gameRecord[0] . '">';
-        print $gameRecord[1];
+
+//create new array to hold associative array
+$gameDataSorted= array();
+
+//take gameData and turn it into an associative array with 
+//csv headers as keys
+for($i = 0; $i < count($gameData) - 1; $i++) {
+    $gameDataSorted[] = array_combine($headers, $gameData[$i]);
+}
+
+//sort alphabetically by name
+function compareByName($a, $b) {
+  return strcmp($a["Name"], $b["Name"]);
+}
+usort($gameDataSorted, 'compareByName');
+
+
+
+foreach ($gameDataSorted as $gameRecord) {
+    if($gameRecord['Genre'] == $genre) {
+        print '<li><a href="game.php?gameID=' . $gameRecord['Num'] . '">';
+        print $gameRecord['Name'];
         print '</a></li>';
     }
 }

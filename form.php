@@ -210,7 +210,7 @@ if (isset($_POST['btnSubmit'])) {
         $gameGenreERROR = true;
     }
 
-    if ($age != 'Under 12 years old' AND $age != '12-17 years old' AND $age != '18-34 years old' AND $age != '35-54 years old' AND $age != 'Over 54 years old') {
+    if ($age != 'under12' AND $age != '12_17' AND $age != '18_34' AND $age != '35_54' AND $age != 'over54') {
         $errorMsg[] = 'Please choose an age range';
         $ageERROR = true;
     }
@@ -296,6 +296,23 @@ if (isset($_POST['btnSubmit'])) {
                 if ($value == 'None of these') {
                     $value = 'Selected';
                 }
+                if ($value == 'under12') {
+                    $value = 'Under 12 years old';
+                }
+                if ($value == '12_17') {
+                    $value = '12-17 years old';
+                }
+                if ($value == '18_34') {
+                    $value = '18-34 years old';
+                }
+                if ($value == '35_54') {
+                    $value = '35-54 years old';
+                }
+                if ($value == 'over54') {
+                    $value = 'Over 54 years old';
+                }
+                
+                
                 $message .= ': ' . '</span><span class="formInfo">' . htmlentities($value, ENT_QUOTES, "UTF-8") . '</span></li>';
             }
         }
@@ -316,9 +333,9 @@ if (isset($_POST['btnSubmit'])) {
         $subject = 'Game Addition Request';
 
         $emailMessage = '<h2>Thanks for submitting your request!</h2>';
-        $emailMessage .= '<fig><img src="https://nhanoian.w3.uvm.edu/cs008-final/images/pacman.jpg" alt=""></fig><!-- Photo courtesy of freecodecamp.org -->';
+        $emailMessage .= '<figure><img src="https://nhanoian.w3.uvm.edu/cs008/cs008-final/images/pacman.jpg" alt=""></figure><!-- Photo courtesy of freecodecamp.org -->';
         $emailMessage .= $message;
-        $emailMessage .= '<br><h3><a href="https://nhanoian.w3.uvm.edu/cs008-final/index.php">Video Game Database</a></h3>';
+        $emailMessage .= '<br><h3><a href="https://nhanoian.w3.uvm.edu/cs008/cs008-final/index.php">Video Game Database</a></h3>';
 
 
         $mailed = sendMail($to, $cc, $bcc, $from, $subject, $emailMessage);
@@ -464,7 +481,7 @@ if (isset($_POST['btnSubmit'])) {
                         >
                 </p>
                 <p>
-                    <label class='required check-label' for='lstGameGenre'>Game Genre</label>
+                    <label class='required check-label'>Game Genre</label>
                     <select id='lstgameGenre' class="<?php if ($gameGenreERROR) print 'mistake'; ?>"
                             name='lstGameGenre'
                             tabindex='303'>
@@ -496,22 +513,22 @@ if (isset($_POST['btnSubmit'])) {
                     <li>
                         <label class="radio-field">
                             <input type="radio"
-                                   id="radAgeUnder 12 years old"
+                                   id="radAgeunder12"
                                    name="radAge"
-                                   value="Under 12 years old"
+                                   value="under12"
                                    tabindex="672"
-                                   <?php if ($age == 'Under 12 years old') print 'checked'; ?>>
-                            Under 12 years old</label>
+                                   <?php if ($age == 'under12') print 'checked'; ?>>
+                            Under 12 Years Old</label>
                     </li>
 
                     <li>
                         <label class="radio-field">
                             <input type="radio"
-                                   id="radAge12-17 years old"
+                                   id="radAge12_17"
                                    name="radAge"
-                                   value="12-17 years old"
+                                   value="12_17"
                                    tabindex="682"
-                                   <?php if ($age == '12-17 years old') print 'checked'; ?>>
+                                   <?php if ($age == '12_17') print 'checked'; ?>>
 
                             12-17 years old</label>
                     </li>
@@ -519,11 +536,11 @@ if (isset($_POST['btnSubmit'])) {
                     <li>
                         <label class="radio-field">
                             <input type="radio"
-                                   id="radAge18-34 years old"
+                                   id="radAge18_34"
                                    name="radAge"
-                                   value="18-34 years old"
+                                   value="18_34"
                                    tabindex="692"
-                                   <?php if ($age == '18-34 years old') print 'checked'; ?>>
+                                   <?php if ($age == '18_34') print 'checked'; ?>>
 
                             18-34 years old</label>
                     </li>
@@ -531,11 +548,11 @@ if (isset($_POST['btnSubmit'])) {
                     <li>
                         <label class="radio-field">
                             <input type="radio"
-                                   id="radAge35-54 years old"
+                                   id="radAge35_54"
                                    name="radAge"
-                                   value="35-54 years old"
+                                   value="35_54"
                                    tabindex="695"
-                                   <?php if ($age == '35-54 years old') print 'checked'; ?>>
+                                   <?php if ($age == '35_54') print 'checked'; ?>>
 
                             35-54 years old</label>
                     </li>
@@ -543,11 +560,11 @@ if (isset($_POST['btnSubmit'])) {
                     <li>
                         <label class="radio-field">
                             <input type="radio"
-                                   id="radAgeOver 54 years old"
+                                   id="radAgeover54"
                                    name="radAge"
-                                   value="Over 54 years old"
+                                   value="over54"
                                    tabindex="698"
-                                   <?php if ($age == 'Over 54 years old') print 'checked'; ?>>
+                                   <?php if ($age == 'over54') print 'checked'; ?>>
 
                             Over 54 years old</label>
                     </li>

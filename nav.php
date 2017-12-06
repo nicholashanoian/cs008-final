@@ -5,15 +5,12 @@
 <nav id="topnav">
     <ol>
         <?php
-        
-        
-        
-        
+               
         print '<li class="';
-        if($path_parts['filename'] == 'genre' AND $genre == 'roleplay') {
+        if($path_parts['filename'] == 'index') {
             print 'activePage';}
         print '">';
-        print '<a href="genre.php?genre=roleplay">Role-Play</a>';
+        print '<a href="index.php">Home</a>';
         print '</li>';
         
         
@@ -24,13 +21,13 @@
         print '<a href="genre.php?genre=action">Action</a>';
         print '</li>';
         
+        
         print '<li class="';
-        if($path_parts['filename'] == 'index') {
+        if($path_parts['filename'] == 'genre' AND $genre == 'roleplay') {
             print 'activePage';}
         print '">';
-        print '<a href="index.php">Home</a>';
+        print '<a href="genre.php?genre=roleplay">Role-Play</a>';
         print '</li>';
-        
         
         
         print '<li class="';
@@ -61,8 +58,8 @@ print '<div class="characterContainerLeft">';
 
 $characterPaths = getImagePathArray('images/', 'characters-left');
 for($i = 0; $i < count($characterPaths); $i++) {
-    print '<img class="characterLeft" style="top:'. ($yInitial + ($yOffset * $i)) .'px;"';
-    print 'src="'. $characterPaths[$i] . '">';
+    print '<img class="characterLeft" style="top:'. ($yInitial + ($yOffset * $i)) .'px;" ';
+    print 'src="'. $characterPaths[$i] . '" alt="">';
 }
 
 print '</div>';
@@ -72,8 +69,8 @@ print '<div class="characterContainerRight">';
 
 $characterPaths = getImagePathArray('images/', 'characters-right');
 for($i = 0; $i < count($characterPaths); $i++) {
-    print '<img class="characterRight" style="top:'. ($yInitial + ($yOffset * $i)) .'px;"';
-    print 'src="'. $characterPaths[$i] . '">';
+    print '<img class="characterRight" style="top:'. ($yInitial + ($yOffset * $i)) .'px;" ';
+    print 'src="'. $characterPaths[$i] . '" alt="">';
 }
 
 print '</div>';

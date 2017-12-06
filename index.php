@@ -39,7 +39,9 @@ $recentGames = [$gameData[$firstRecentIndex], $gameData[$secondRecentIndex], $ga
 
 
 print '<article class="home">';
+print '<h2>Welcome to VGDB</h2>';
 
+print '<p>Welcome to the Video Game Database! Here you can find information on all of your favorite video games. We’ve arranged games into three different genres: Role-Play, Action, and Sports. You can find game of each genre by clicking their links listed here, or by using the menu at the top of the page. Once you get to the page of your desired genre, you can access the games listed by simply clicking their links. Shown below are the three most recently released games. You can click on the pictures for more information.</p>';
 
 print '<div class="homeCoverArtContainer">';
 //print cover art links for most recent games

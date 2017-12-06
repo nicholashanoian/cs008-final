@@ -71,7 +71,7 @@ print '<html id="' . $path_parts['filename'] . 'Background" lang="en">';
         include 'lib/rating-gradient.php';
     }
     
-    include 'lib/getImagePathArray.php';
+    include 'lib/get-image-path-array.php';
     
     print PHP_EOL . '<!-- finished including libraries -->' . PHP_EOL;
 
@@ -105,6 +105,7 @@ print '<html id="' . $path_parts['filename'] . 'Background" lang="en">';
         // read the header row, copy the line for each header row
         // you have.
         $headers[] = fgetcsv($file);
+        $headers = $headers[0];
 
         if ($debug) {
             print '<p>Finished reading headers.</p>';
