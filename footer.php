@@ -11,8 +11,7 @@
 var slideIndex = 0;
 var slidesTimer;
 
-
-if(location.pathname == '/cs008-final/game.php') {
+if(location.pathname === '/cs008/cs008-final/game.php') {
     startUp();
 }
 
@@ -106,8 +105,11 @@ function setBorder() {
     
 }
 
-window.onload = setBorder;
-window.onresize = setBorder;
+//window.onload = setBorder;
+//
+//$( window ).resize(function(){
+//    setBorder();
+//});
 
 
 

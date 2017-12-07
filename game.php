@@ -153,7 +153,7 @@ print '<div class="left button" onclick="moveImg(-1)">&#10094;</div>';
 print '<div class="right button" onclick="moveImg(1)">&#10095;</div>';
 
 //for each image in slider add a bottom button
-for ($i; $i < count($screenshotPaths); $i++) {
+for ($i = 0; $i < count($screenshotPaths); $i++) {
     print '<div class="smallButton demo" onclick="setImg('; 
     if ($i == 0) {
         print '0'; //php didn't want to print a zero (printed nothing) so had to force it

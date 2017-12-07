@@ -87,11 +87,32 @@ h1 {
     padding-bottom:.2em;
     color: #400;
 }
+
+
+
+
 .title{
     text-align: left;
     background: linear-gradient(to bottom, #ca5956 , #eee);
     margin-bottom:10px;
     color: #400;
+}
+
+
+header a{
+    color: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    text-decoration: inherit;
+}
+
+header a:visited{
+    color: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    text-decoration: inherit;
 }
 
 footer{
@@ -533,42 +554,26 @@ select {
     text-align: center;
 }
 
-.characterLeft {
+.characterLeft, .characterRight {
+    width: 75px;
+    padding-bottom: 70px;
+}
+
+
+.characterContainerLeft, .characterContainerRight{
+    overflow: hidden;
+    height: calc(100% - 150px);
     width: 75px;
     position: absolute;
-    left: 2%;
-    overflow: hidden;
-}
-
-.characterRight {
-    width: 75px;
-    position: absolute;
-    left: calc(98% - 75px);
-    overflow: hidden;
-}
-
-.characterContainerLeft, .characterContainerRight {
-    overflow: hidden;
-}
-
-#creed {
     top: 150px;
 }
 
-#link {
-    top: 300px;
+.characterContainerLeft{
+    left: 2%;
 }
 
-#mario {
-    top: 450px;
-}
-
-#pacman {
-    top: 600px;
-}
-
-.hidden {
-    display: none;
+.characterContainerRight {
+    left: calc(98% - 75px);
 }
 
 @media screen and (max-width: 970px) {
@@ -582,8 +587,8 @@ select {
     }
 }
 
-@media screen and (max-width: 1080px) {
-    .characterLeft, .characterRight {
+@media screen and (max-width: 1150px) {
+    .characterContainerLeft, .characterContainerRight {
         display: none;
     }
 }

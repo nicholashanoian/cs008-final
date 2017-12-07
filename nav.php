@@ -51,28 +51,40 @@
 
 <?php
 
-$yInitial = 150;
-$yOffset = 200;
+// ############ Sidebar Images ##################//
 
+
+
+//container for right side images
 print '<div class="characterContainerLeft">';
 
+//get image paths from folder
 $characterPaths = getImagePathArray('images/', 'characters-left');
+shuffle($characterPaths); //randomize order of characters on side
+
+//create image elements
 for($i = 0; $i < count($characterPaths); $i++) {
-    print '<img class="characterLeft" style="top:'. ($yInitial + ($yOffset * $i)) .'px;" ';
+    print '<img class="characterLeft"';
     print 'src="'. $characterPaths[$i] . '" alt="">';
 }
-
 print '</div>';
 
 
+
+
+//container for right side images
 print '<div class="characterContainerRight">';
 
+//get image paths from folder
 $characterPaths = getImagePathArray('images/', 'characters-right');
+
+shuffle($characterPaths); //randomize order of characters on side
+
+//create image elements
 for($i = 0; $i < count($characterPaths); $i++) {
-    print '<img class="characterRight" style="top:'. ($yInitial + ($yOffset * $i)) .'px;" ';
+    print '<img class="characterRight"';
     print 'src="'. $characterPaths[$i] . '" alt="">';
 }
-
 print '</div>';
 ?>
 
