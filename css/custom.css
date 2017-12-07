@@ -196,6 +196,10 @@ summary {
     color: #393939;
 }
 
+summary:hover {
+    cursor: pointer;
+}
+
 details {
     padding: 0.5em;
     border: 1px solid #6d56ca;
