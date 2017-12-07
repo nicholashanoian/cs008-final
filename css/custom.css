@@ -59,13 +59,14 @@ nav a:hover{
 }
 
 .breadcrumb {
-    font-size: 0.8em;
-}
-
-.breadcrumbContainer {
     max-width: 39em;
     margin: auto;
     padding: 1em 5% 0 5%;
+}
+
+.breadcrumb p{
+    font-size: 0.8em;
+    margin: 0;
 }
 
 ol ol {
@@ -259,20 +260,15 @@ article {
     padding: 1em 5% 7em 5%;
 }
 
-article.home {
-    padding-bottom: 24em;
-}
-
-
 .genre p {
     margin-top: 0;
 }
 
-.genre ul {
+.genre ul, .about ul {
     padding-left: 3em;
 }
 
-aside {
+.game aside {
     text-align: left;
     padding-bottom: 0.5em;
     font-size: 0.8em;
@@ -380,18 +376,7 @@ aside {
     background-color: #cbbfff;
 }
 
-.animateFade {
-    animation: fading 3s infinite
-} @keyframes fading{
-    0%{opacity:0}
-    30%{opacity:1}
-    50%{opacity:1}
-    70%{opacity:1}
-    100%{opacity:0}
-}
-
-
-.video-container {
+.video {
     position:relative;
     padding-bottom:56.25%;
     padding-top:30px;
@@ -399,7 +384,7 @@ aside {
     overflow:hidden;
 }
 
-.video-container iframe {
+.video iframe {
     position:absolute;
     top:0;
     left:0;
@@ -588,6 +573,7 @@ select {
 
 .homeCoverArtContainer {
     text-align: center;
+    margin: 0;
 }
 
 .characterLeft, .characterRight {
@@ -624,6 +610,20 @@ select {
     margin-top: 1em;
     margin-bottom: 1em;
     overflow: scroll;
+}
+
+.about li {
+    padding-bottom: 0.5em;
+}
+
+.about details li {
+    padding-bottom: 0.1em;
+}
+
+
+figcaption {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.9em;
 }
 
 @media screen and (max-width: 970px) {

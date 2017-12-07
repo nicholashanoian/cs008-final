@@ -10,12 +10,10 @@ if($genre=='roleplay') {
 }
 
 
-print('<div class="breadcrumbContainer"><nav class="breadcrumb">
+print('<nav class="breadcrumb"><p>
     <a href="index.php">Home</a> / 
     <a href="genre.php?genre='.$genre. '">' . $genreClean .'</a>
-
-
-        </nav></div>');
+    </p></nav>');
 
 
 

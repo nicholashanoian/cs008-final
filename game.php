@@ -21,13 +21,11 @@ if($thisGame[2]=='roleplay') {
 }
 
 
-print('<div class="breadcrumbContainer"><nav class="breadcrumb">
+print('<nav class="breadcrumb"><p>
     <a href="index.php">Home</a> / 
     <a href="genre.php?genre='.$thisGame[2]. '">' . $genreClean .'</a> / 
     <a href="game.php?game=' . $thisGame[0]. '">' . $thisGame[1] .'</a>
-
-
-        </nav></div>');
+    </p></nav>');
 
 
 
@@ -175,11 +173,11 @@ print PHP_EOL;
 
 // ############################ Game Trailer ################################ //
 
-print '<div class="video-container">';
+print '<figure class="video">';
 
 print '<iframe width="640" height="352" src="https://youtube.com/embed/'.$thisGame[11].'" allowfullscreen></iframe>';
 
-print '</div>';
+print '</figure>';
 
 print PHP_EOL;
 print PHP_EOL;

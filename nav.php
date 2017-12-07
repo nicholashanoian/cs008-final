@@ -78,25 +78,25 @@ for($i = 0; $i < count($characterPaths); $i++) {
 
 
 //container for right side images
-print '<div class="characterContainerLeft">';
+print '<aside class="characterContainerLeft">';
 //create image elements
 for($i = 0; $i < count($leftPaths); $i++) {
     print '<img class="characterLeft"';
     print 'src="'. $leftPaths[$i] . '" alt="">';
 }
-print '</div>';
+print '</aside>';
 
 
 
 
 //container for right side images
-print '<div class="characterContainerRight">';
+print '<aside class="characterContainerRight">';
 //create image elements
 for($i = 0; $i < count($rightPaths); $i++) {
     print '<img class="characterRight"';
     print 'src="'. $rightPaths[$i] . '" alt="">';
 }
-print '</div>';
+print '</aside>';
 ?>
 
 <!-- ####################    End of  Nav   ############################ -->

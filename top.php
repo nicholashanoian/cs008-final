@@ -69,9 +69,16 @@ print '<html id="' . $path_parts['filename'] . 'Background" lang="en">';
         include 'lib/mail-message.php';
     }
 
+    
+    if ($path_parts['filename'] == "index") {
+        include 'lib/get-recent-games.php';
+    }
+    
     if ($path_parts['filename'] == "game") {
         include 'lib/rating-gradient.php';
     }
+    
+    
     
     include 'lib/get-image-path-array.php';
     
