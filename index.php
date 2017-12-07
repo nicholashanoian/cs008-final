@@ -53,7 +53,7 @@ for($i = 0; $i < count($recentGames); $i++) {
     print '<figure class="homeCoverArt"><a href="game.php?gameID='.$recentGames[$i][0].'">';
     print '<img src="';
     print $coverArt[0];
-    print '" alt=""></a></figure>';
+    print '" align="top" alt=""></a></figure>';
 
     print PHP_EOL;
     print PHP_EOL;
