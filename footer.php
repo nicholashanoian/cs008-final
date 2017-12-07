@@ -12,52 +12,48 @@ var slideIndex = 0;
 var slidesTimer;
 
 if(location.pathname === '/cs008/cs008-final/game.php') {
-    startUp();
+    setImg(0);
 }
-
-
-function startUp() {
-    var i;
-    var x = document.getElementsByClassName("screenshotSlides");
-    var dots = document.getElementsByClassName("demo");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none"; 
-    }
-    for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" activeButton", "");
-    }
-    x[0].style.display = "block";
-    dots[slideIndex].className += " activeButton";
-    setTimeout('moveImg(1)', 3000);
-}
-
-
 
 function moveImg(n) {
-    var i;
+    //initialize index
+    var i; 
+    //get all images in slides
     var x = document.getElementsByClassName("screenshotSlides");
-    var dots = document.getElementsByClassName("demo");
+    //get all buttons from slider
+    var dots = document.getElementsByClassName("dot");
+    
+    //hide all images
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none"; 
     }
-    slideIndex += n;
+    //remove active button class from all buttons
     for (i = 0; i < dots.length; i++) {
      dots[i].className = dots[i].className.replace(" activeButton", "");
     }
+    
+    //move to next (or previous if n = -1) image
+    slideIndex += n;
+    
+    //if index is greater than the number of images, go back to start
     if (slideIndex > x.length-1) {slideIndex = 0} 
+    //if index is less than 0, go to the end
     if (slideIndex < 0) {slideIndex = x.length-1}
+    
+    //show current image
     x[slideIndex].style.display = "block"; 
+    //add activeButton class to current slide's button
     dots[slideIndex].className += " activeButton";
+    
+    //clear and reset timer to go to next image after 3 seconds
     clearInterval(slidesTimer);
     slidesTimer = setInterval('moveImg(1)', 3000);
-    
-    
 }
 
 function setImg(n) {
     var i;
     var x = document.getElementsByClassName("screenshotSlides");
-    var dots = document.getElementsByClassName("demo");
+    var dots = document.getElementsByClassName("dot");
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none"; 
     }
@@ -70,57 +66,6 @@ function setImg(n) {
     clearInterval(slidesTimer);
     slidesTimer = setInterval('moveImg(1)', 3000);
 }
-
-
-
-
-
-function setBorder() {
- 
-    footer = document.getElementsByTagName('footer');
-    footerBox = footer[0].getBoundingClientRect();
-
-    characterLefts = document.getElementsByClassName("characterLeft");
-    characterRights = document.getElementsByClassName("characterRight");
-
-    for (var i = 0; i < characterLefts.length; i++) {
-        thisBox = characterLefts[i].getBoundingClientRect();    
-
-        if(thisBox.top > footerBox.top) {
-            characterLefts[i].className += " hidden";
-        } else {
-            characterLefts[i].className = characterLefts[i].className.replace(" hidden", "");
-        }
-    }
-
-    for (var i = 0; i < characterRights.length; i++) {
-        thisBox = characterRights[i].getBoundingClientRect();    
-
-        if(thisBox.top+20 > footerBox.top) {
-            characterRights[i].className += " hidden";
-        } else {
-            characterRights[i].className = characterRights[i].className.replace(" hidden", "");
-        }
-    }
-    
-}
-
-//window.onload = setBorder;
-//
-//$( window ).resize(function(){
-//    setBorder();
-//});
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 <!-- ####################    End of  footer     ############################ -->

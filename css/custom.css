@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    font-family: "Times New Roman", serif;
+    font-family: Helvetica, sans-serif;
     font-size: 16pt;
     line-height: 1.4em;
     margin-top: 5%;
@@ -26,11 +26,12 @@ nav ol {
     margin: 1em;
     text-align: center;
     margin: 1em auto;
+    line-height: 1.5em;
 }
 #topnav ol li.activePage{
-    background-color: #d96c69;
-    border: 1px solid #d96c69;
-    border-radius:.1em;
+    background-color: #cbbfff;
+    border: 1px solid #6d56ca;
+    border-radius: .1em;
 }
 #topnav ol{
     margin-top: 0;
@@ -46,11 +47,11 @@ nav ol {
 nav a{
     text-decoration: none;
     font-size: 120%;    
-    color: #400;
+    color: #393939;
 }
 
 nav a:visited{
-    color: #400
+    color: #393939
 }
 
 nav a:hover{
@@ -85,7 +86,7 @@ h1 {
     margin-top:0;
     padding-top:.2em;
     padding-bottom:.2em;
-    color: #400;
+    color: #383838;
 }
 
 
@@ -93,9 +94,8 @@ h1 {
 
 .title{
     text-align: left;
-    background: linear-gradient(to bottom, #ca5956 , #eee);
-    margin-bottom:10px;
-    color: #400;
+    background: linear-gradient(to bottom, #6d56ca , #eee);
+    margin-bottom: 10px;
 }
 
 
@@ -117,8 +117,8 @@ header a:visited{
 
 footer{
     text-align: left;
-    background: linear-gradient(to bottom, #eee, #ca5956);
-    color: #400;
+    background: linear-gradient(to top, #6d56ca, #eee);
+    color: #222;
     height: 101.32px;
     position: absolute;
     right: 0;
@@ -137,7 +137,7 @@ footer .footerContent {
 
 footer p {
     margin: 0;
-    font-size: 0.8em;
+    font-size: 0.85em;
     text-align: center;
 }
 
@@ -150,7 +150,7 @@ footer p {
 .footerLink {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     text-decoration: none;
-    color: #400;
+    color: #222;
 }
 
 .footerLink:after {
@@ -159,7 +159,7 @@ footer p {
 }
 
 .footerLink:visited {
-    color: #400;
+    color: #222;
 }
 
 .footerLink:hover {
@@ -179,16 +179,29 @@ h2{
     margin-bottom: 0.5em;
     padding: 0.3em;
     line-height:1.2em;
-    color: #400;
+    color: #393939;
 }
 
 h3 {
-    text-align: center;
+    text-align: left;
     font-family:Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 1.3em;
     margin-top: 1.3em;
     margin-bottom: 0.7em;
-    color: #400;
+    color: #393939;
+}
+
+summary {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    color: #393939;
+}
+
+details {
+    padding: 0.5em;
+    border: 1px solid #6d56ca;
+    border-radius: .3em;
+    background-color: #cbbfff;
+    margin-bottom: 0.5em;
 }
 
 img {
@@ -210,7 +223,19 @@ pre {
     margin-right: auto;
 }
 
+article a {
+    text-decoration: none;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    color: #6d56ca;
+}
 
+article a:hover {
+    text-decoration: underline;
+}
+
+article a:visited {
+    color: #6d56ca;
+}
 
 
 
@@ -239,6 +264,10 @@ article.home {
     margin-top: 0;
 }
 
+.genre ul {
+    padding-left: 3em;
+}
+
 aside {
     text-align: left;
     padding-bottom: 0.5em;
@@ -254,8 +283,9 @@ aside {
 .gameInfoContainer {
     float: right;
     text-align: center;
-    border: 1px solid #b92b27;
+    border: 1px solid #6d56ca;
     border-radius: .3em;
+    background-color: #cbbfff;
     width: 13em;
 }
 
@@ -283,6 +313,8 @@ aside {
     font-size: 0.8em;
     line-height: 1.3em;
 }
+
+
 
 
 
@@ -318,7 +350,7 @@ aside {
 
 .button {
     padding: 0.5em 1em;
-    background-color: #b92b27;
+    background-color: #6d56ca;
     margin: 0.5em;
 }
 
@@ -329,7 +361,7 @@ aside {
     display: inline-block;
     margin-left: 6px;
     margin-right: 6px;
-    border: 1px solid #b92b27;
+    border: 1px solid #6d56ca;
     position: relative;
     top: 22px;
 }
@@ -341,7 +373,7 @@ aside {
 
 
 .activeButton {
-    background-color: rgba(185,43,39,.74);
+    background-color: #cbbfff;
 }
 
 .animateFade {
@@ -380,14 +412,14 @@ form {
 }
 
 fieldset {
-    border: 2px solid #b92b27;
+    border: 2px solid #6d56ca;
     clear: both;
     margin-top: 1.5em;
     padding-bottom: 1.5em;
 }
 
 label {
-    color: #400;
+    color: #393939;
     font-size: 0.8em;
     font-weight: bold;
     line-height: 1.5em;
@@ -412,10 +444,10 @@ label {
 
 
 #form input[type=submit] {
-    background: #ca5956 none repeat scroll 0 0;
+    background: #cbbfff none repeat scroll 0 0;
     border: medium none;
     border-radius: 2px;
-    box-shadow: 2px 2px 4px 0px #f59592;
+    box-shadow: 2px 2px 4px 0px #6d56ca;
     color: #000;
     margin: 1em;
     padding: 0.4em 2.5em;
@@ -449,7 +481,7 @@ form p {
 }
 
 legend {
-    color: #400;
+    color: #393939;
     font-weight: bold;
     font-size: 1.4em;
     line-height: 1.5em;
@@ -473,7 +505,7 @@ label:after {
 #userMessage {
     max-width: 30em;
     margin: auto;
-    border: 2px solid #b92b27;
+    border: 2px solid #6d56ca;
     clear: both;
     margin-top: 1.5em;
 }
@@ -482,7 +514,7 @@ label:after {
 .message {
     max-width: 30em;
     margin: auto;
-    border: 2px solid #b92b27;
+    border: 2px solid #6d56ca;
     clear: both;
     margin-top: 0.5em;
 }
@@ -539,11 +571,11 @@ select {
 
 .homeCoverArt {
     float: left;
-    width: 30%;
+    width: 29%;
     margin-left: 0;
     margin-right: 0;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
 }
 
 .homeCoverArt img{
@@ -576,6 +608,20 @@ select {
     left: calc(98% - 75px);
 }
 
+.code {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #ddd;
+    padding: 0.05em 0.5em;
+}
+
+.codeBlock {
+    display: block;
+    white-space: pre;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    overflow: scroll;
+}
+
 @media screen and (max-width: 970px) {
     .coverArt {
         display: block;
@@ -590,5 +636,14 @@ select {
 @media screen and (max-width: 1150px) {
     .characterContainerLeft, .characterContainerRight {
         display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .footerCredits {
+        display: none;
+    }
+    footer p {
+        margin-top: 1em;
     }
 }

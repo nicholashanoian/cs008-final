@@ -21,7 +21,6 @@ function getImagePathArray($path, $folder) {
     }
     
     return $pathArray;
-    
 }
 
 ?>

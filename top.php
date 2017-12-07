@@ -13,6 +13,8 @@ print '<html id="' . $path_parts['filename'] . 'Background" lang="en">';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="images/controller-icon.png" rel="icon" type="image/x-icon">
     <link href="css/custom.css" rel="stylesheet" type="text/css">
+    
+
 
     <?php
     $debug = false;

@@ -37,7 +37,7 @@ if($genre == 'action') {
 
 
 
-print '<ol>';
+print '<ul>';
 
 
 //create new array to hold associative array
@@ -65,7 +65,8 @@ foreach ($gameDataSorted as $gameRecord) {
     }
 }
 
-print '</ol>';
+
+print '</ul>';
 
 print '</article>';
 

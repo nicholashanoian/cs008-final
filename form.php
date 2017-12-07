@@ -465,7 +465,7 @@ if (isset($_POST['btnSubmit'])) {
 
 
             <fieldset class="formGameInfo">
-                <legend>Your Game</legend>
+                <legend>New Game Request</legend>
                 <p>
                     <label class='required text-field' for='txtGameTitle'>Game Title</label>
                     <input 
