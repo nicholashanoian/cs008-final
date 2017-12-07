@@ -53,19 +53,29 @@
 
 // ############ Sidebar Images ##################//
 
+$leftPaths = [];
+$rightPaths = [];
+
+$characterPaths = getImagePathArray('images/', 'characters');
+shuffle($characterPaths); //randomize order of characters on side
+for($i = 0; $i < count($characterPaths); $i++) {
+    if($i % 2 == 0) {
+        $leftPaths[] = $characterPaths[$i];
+    } else {
+        $rightPaths[] = $characterPaths[$i];
+    }
+    
+}
+
+
 
 
 //container for right side images
 print '<div class="characterContainerLeft">';
-
-//get image paths from folder
-$characterPaths = getImagePathArray('images/', 'characters-left');
-shuffle($characterPaths); //randomize order of characters on side
-
 //create image elements
-for($i = 0; $i < count($characterPaths); $i++) {
+for($i = 0; $i < count($leftPaths); $i++) {
     print '<img class="characterLeft"';
-    print 'src="'. $characterPaths[$i] . '" alt="">';
+    print 'src="'. $leftPaths[$i] . '" alt="">';
 }
 print '</div>';
 
@@ -74,16 +84,10 @@ print '</div>';
 
 //container for right side images
 print '<div class="characterContainerRight">';
-
-//get image paths from folder
-$characterPaths = getImagePathArray('images/', 'characters-right');
-
-shuffle($characterPaths); //randomize order of characters on side
-
 //create image elements
-for($i = 0; $i < count($characterPaths); $i++) {
+for($i = 0; $i < count($rightPaths); $i++) {
     print '<img class="characterRight"';
-    print 'src="'. $characterPaths[$i] . '" alt="">';
+    print 'src="'. $rightPaths[$i] . '" alt="">';
 }
 print '</div>';
 ?>
