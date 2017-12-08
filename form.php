@@ -335,9 +335,9 @@ if (isset($_POST['btnSubmit'])) {
         $subject = 'Game Addition Request';
 
         $emailMessage = '<h2>Thanks for submitting your request!</h2>';
-        $emailMessage .= '<figure><img src="https://nhanoian.w3.uvm.edu/cs008/cs008-final/images/pacman.jpg" alt=""></figure><!-- Photo courtesy of freecodecamp.org -->';
+        $emailMessage .= '<figure><img src="https://nhanoian.w3.uvm.edu/cs008/final/images/pacman.jpg" alt=""></figure><!-- Photo courtesy of freecodecamp.org -->';
         $emailMessage .= $message;
-        $emailMessage .= '<br><h3><a href="https://nhanoian.w3.uvm.edu/cs008/cs008-final/index.php">Video Game Database</a></h3>';
+        $emailMessage .= '<br><h3><a href="https://nhanoian.w3.uvm.edu/cs008/final/index.php">Video Game Database</a></h3>';
 
 
         $mailed = sendMail($to, $cc, $bcc, $from, $subject, $emailMessage);
