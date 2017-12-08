@@ -72,11 +72,9 @@ if (isset($_GET['genre'])) {
 
 } else {
     foreach ($gameDataSorted as $gameRecord) {
-        $coverArt = getImagePathArray('images/cover-art', $gameRecord[1]);
         print '<li><a href="game.php?gameID=' . $gameRecord['Num'] . '">';
         print $gameRecord['Name'];
-        print '</a>';
-        print '<img src="'.$coverArt[0].'"></li>';
+        print '</a></li>';
     }
 }
 
