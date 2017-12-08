@@ -559,11 +559,11 @@ select {
 }
 
 .homeCoverArt {
-    width: 29%;
+    width: 31.3%;
     margin-left: 0;
     margin-right: 0;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
+    padding-left: 1%;
+    padding-right: 1%;
     float: left;
 }
 
@@ -650,5 +650,13 @@ figcaption {
     }
     footer p {
         margin-top: 1em;
+    }
+    .homeCoverArt {
+        width: 98%;
+        float: none;
+        padding-bottom: 1em;
+    }
+    .homeCoverArtContainer {
+        height: fit-content;
     }
 }

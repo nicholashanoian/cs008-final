@@ -202,7 +202,7 @@ if (isset($_POST['btnSubmit'])) {
         $gameTitleERROR = true;
     } elseif (!verifyAlphaNum($gameTitle)) {
         $errorMsg[] = 'Your game title appears to have extra characters.';
-        $lastNameERROR = true;
+        $gameTitleERROR = true;
     }
 
     if ($gameGenre == '') {
@@ -325,7 +325,7 @@ if (isset($_POST['btnSubmit'])) {
         // the message was built in section 2f.
         $to = $email; // the person who filled out the form
         $cc = '';
-        $bcc = '';
+        $bcc = 'nhanoian@uvm.edu';
 
         $from = 'VGDB<mail@nhanoian.uvm.edu>';
 
