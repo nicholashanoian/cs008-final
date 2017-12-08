@@ -26,7 +26,7 @@ include 'top.php';
     <section id="siteDesign">
         <p>There are many attributes of this website that are not initially apparent. Learn more about the website by clicking one of the headings below.</p>
     <details class="backEnd">
-        <summary>CSV-Based Design</summary>
+        <summary>CSV-Based Content</summary>
         <p>Nearly all of the content on the website is based off of information from a comma separated values (CSV) file. Each game is a row in the CSV file and is given the following information:</p>
         <ul>
             <li>Identification Number (ID)</li>
