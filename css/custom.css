@@ -307,6 +307,8 @@ article {
 
 .gameInfo li {
     list-style-type: none;
+    padding-left: 22px ;
+    text-indent: -22px ;
 }
 
 .ratingLabel {
