@@ -564,7 +564,7 @@ select {
     margin-right: 0;
     padding-left: 0.25em;
     padding-right: 0.25em;
-    display: inline-block
+    float: left;
 }
 
 .homeCoverArt img{
@@ -574,6 +574,7 @@ select {
 .homeCoverArtContainer {
     text-align: center;
     margin: 0;
+    height: 19em;
 }
 
 .characterLeft, .characterRight {
