@@ -22,8 +22,9 @@ include 'top.php';
 
     
         
-    <h3>Design of the Site</h3>
+    
     <section id="siteDesign">
+        <h3>Design of the Site</h3>
         <p>There are many attributes of this website that are not initially apparent. Learn more about the website by clicking one of the headings below.</p>
     <details class="backEnd">
         <summary>CSV-Based Content</summary>
@@ -83,14 +84,14 @@ include 'top.php';
         <summary>Game Rating Color</summary>
         <p>In order to make each game's page more visually appealing, I designed a function to set the background color of the number rating. The following function takes a rating between 0 and 100 as input and returns an array containing red, green, and blue values for the color. The color is red if the rating is less than 20, and goes from red to yellow between 20 and 70, and goes from yellow to green as it approaches 100.<span class="code codeBlock"> function ratingGradient($rating) {
     //set red content
-    if($rating < 70) { //rating < 70, red or yellow
+    if($rating &lt; 70) { //rating &lt; 70, red or yellow
         $r = 255;
     }else { //rating > 70, remove red to make green
         $r = 255 - 7 * ($rating - 63);
     }
 
     //set green content
-    if($rating < 20) { //rating < 20, all red
+    if($rating &lt; 20) { //rating &lt; 20, all red
         $g = 0;
     }else { //rating > 20, add green to make yellow
         $g = 7 * ($rating - 20);
@@ -118,11 +119,11 @@ include 'top.php';
     var dots = document.getElementsByClassName("dot");
     
     //hide all images
-    for (i = 0; i < x.length; i++) {
+    for (i = 0; i &lt; x.length; i++) {
       x[i].style.display = "none"; 
     }
     //remove active button class from all buttons
-    for (i = 0; i < dots.length; i++) {
+    for (i = 0; i &lt; dots.length; i++) {
      dots[i].className = dots[i].className.replace(" activeButton", "");
     }
     
@@ -132,7 +133,7 @@ include 'top.php';
     //if index is greater than the number of images, go back to start
     if (slideIndex > x.length-1) {slideIndex = 0} 
     //if index is less than 0, go to the end
-    if (slideIndex < 0) {slideIndex = x.length-1}
+    if (slideIndex &lt; 0) {slideIndex = x.length-1}
     
     //show current image
     x[slideIndex].style.display = "block"; 
@@ -186,14 +187,14 @@ include 'top.php';
     $thirdRecentIndex = 0;
 
     //get index of most recent game
-    for($i = 0; $i < count($data); $i++) {
+    for($i = 0; $i &lt; count($data); $i++) {
         if(strtotime($data[$i][4]) > strtotime($data[$firstRecentIndex][4])) {
             $firstRecentIndex = $i;
         }
     }
 
     //get index of second most recent game 
-    for($i = 0; $i < count($data); $i++) {
+    for($i = 0; $i &lt; count($data); $i++) {
         if($i != $firstRecentIndex) {
             if(strtotime($data[$i][4]) > strtotime($data[$secondRecentIndex][4])) {
                 $secondRecentIndex = $i;
@@ -202,7 +203,7 @@ include 'top.php';
     }
 
     //get index of third most recent game 
-    for($i = 0; $i < count($data); $i++) {
+    for($i = 0; $i &lt; count($data); $i++) {
         if($i != $firstRecentIndex AND $i != $secondRecentIndex) {
             if(strtotime($data[$i][4]) > strtotime($data[$thirdRecentIndex][4])) {
                 $thirdRecentIndex = $i;
@@ -230,7 +231,7 @@ include 'top.php';
         <summary>Alphabetizing Games</summary>
         <p>Because future versions of this website could contain many, many games, it made sense to alphabetize the order that they appear on their genre pages. Because all of the game data is stored in a two-dimensional array, it was very difficult to sort. The solution was to turn the indexed array of game data into an associative array. This was accomplished using the following code:
             <span class="code codeBlock">$gameDataSorted= array();
-for($i = 0; $i < count($gameData) - 1; $i++) {
+for($i = 0; $i &lt; count($gameData) - 1; $i++) {
     $gameDataSorted[] = array_combine($headers, $gameData[$i]);
 }</span>
             This created a new associative array called <span class="code">$gameDataSorted</span>, with the keys being the headers of the CSV file. This array could then be sorted by using the following code:

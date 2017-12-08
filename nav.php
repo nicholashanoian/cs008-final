@@ -81,7 +81,7 @@ for($i = 0; $i < count($characterPaths); $i++) {
 print '<aside class="characterContainerLeft">';
 //create image elements
 for($i = 0; $i < count($leftPaths); $i++) {
-    print '<img class="characterLeft"';
+    print '<img class="characterLeft" ';
     print 'src="'. $leftPaths[$i] . '" alt="">';
 }
 print '</aside>';
@@ -93,7 +93,7 @@ print '</aside>';
 print '<aside class="characterContainerRight">';
 //create image elements
 for($i = 0; $i < count($rightPaths); $i++) {
-    print '<img class="characterRight"';
+    print '<img class="characterRight" ';
     print 'src="'. $rightPaths[$i] . '" alt="">';
 }
 print '</aside>';
