@@ -118,8 +118,10 @@ if (isset($_POST['btnSubmit'])) {
     $gameGenre = htmlentities($_POST['lstGameGenre'], ENT_QUOTES, 'UTF-8');
     $dataRecord[] = $gameGenre;
 
+    if(isset($_POST['radAge'])) {
     $age = htmlentities($_POST['radAge'], ENT_QUOTES, 'UTF-8');
     $dataRecord[] = $age;
+    }
 
     if (isset($_POST['chkXbox'])) {
         $xbox = true;
