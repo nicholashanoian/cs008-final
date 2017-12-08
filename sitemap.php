@@ -47,11 +47,22 @@
                 </ol>
             </li>
 
+            <li>Specification Document
+                <ol>
+                    <li><a href="timelogs/specs.pdf">Specification Document</a></li>
+                </ol>
+                
+            </li>
+            
+            
             <li>Timelogs
                 <ol>
-                    <li><a href="timelogs/11-12 summary.docx">11/12 Summary</a></li>
-                    <li><a href="timelogs/11-5 summary.docx">11/5 Summary</a></li>
-                    <li><a href="timelogs/10-29 summary.docx">10/29 Summary</a></li>
+                    <li><a href="timelogs/final.pdf">Final Summary</a></li>
+                    <li><a href="timelogs/12-3.pdf">12/3 Summary</a></li>
+                    <li><a href="timelogs/11-19.pdf">11/19 Summary</a></li>
+                    <li><a href="timelogs/11-12.pdf">11/12 Summary</a></li>
+                    <li><a href="timelogs/11-5.pdf">11/5 Summary</a></li>
+                    <li><a href="timelogs/10-29.pdf">10/29 Summary</a></li>
                 </ol>
             </li>
         </ol>
